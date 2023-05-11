@@ -2,9 +2,22 @@
 
 @section ('content')
 
+form example
+
+<form method="post" action="/report/submit">
+<?php foreach($mysqli_fetch_assoc($segmentfields) as $formrow): ?>
+<label><?php echo $formrow['field_name']?></label>
+<input type="<?php echo $formrow['data-type']?>" name="<?php echo $formrow['field_name']?>">
+<?php endforeach;?>
+<input type="submit" value="Submit">
+</form>
+
+
 <section class="w3-padding">
 
     <h2>Add Project</h2>
+
+
 
     <form method="post" action="/console/projects/add" novalidate class="w3-margin-bottom">
 
