@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('internal_systems', function (Blueprint $table) {
             $table->id();
+            $table->string("request_api_url");
+            $table->string('system_icon')->nullable();
             $table->timestamps();
         });
     }

@@ -8,6 +8,7 @@ use App\Models\Type;
 use App\Models\SegmentType;
 use App\Models\SubSegmentType;
 use App\Models\SegmentField;
+use App\Models\InternalSystem;
 use App\Models\Project;
 use Illuminate\Database\Seeder;
 
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         SegmentType::truncate();
         SubSegmentType::truncate();
         SegmentField::truncate();
+        InternalSystem::truncate();
         Project::truncate();
         
         User::factory()->count(2)->create();
@@ -35,6 +37,7 @@ class DatabaseSeeder extends Seeder
         SegmentType::factory()->count(3)->create();
         SubSegmentType::factory()->count(3)->create();
         SegmentField::factory()->count(3)->create();
+        InternalSystem::factory()->count(3)->create();
         Project::factory()->count(4)->create();
             
     }

@@ -15,7 +15,7 @@ class SegmentType extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'type_name'
+        'type_name',
     ];
 
     public function segments()
@@ -26,5 +26,10 @@ class SegmentType extends Model
     public function subSegmentTypes()
     {
         return $this->hasMany(SubSegmentType::class);
+    }
+
+    public function segmentFields()
+    {
+        return $this->hasMany(SegmentField::class);
     }
 }
