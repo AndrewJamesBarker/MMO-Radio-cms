@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('segments', function (Blueprint $table) {
+        Schema::create('audios', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('segment_data');
-            $table->foreignId('reporter_id');
-            $table->foreignId('internal_system_id');
-            $table->foreignId('segment_type_id');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('segments');
+        Schema::dropIfExists('audios');
     }
 };
