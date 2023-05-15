@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_segment_types', function (Blueprint $table) {
+        Schema::create('internal_systems', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('segment_type_id');
-            $table->string("sub_segment_name");
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_segment_types');
+        Schema::dropIfExists('internal_systems');
     }
 };
