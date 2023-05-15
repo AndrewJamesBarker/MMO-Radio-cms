@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('segment_types', function (Blueprint $table) {
-            $table->id("segment_type_id");
+            $table->id();
             $table->string("type_name");
             $table->timestamps();
         });
