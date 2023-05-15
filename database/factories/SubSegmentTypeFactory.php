@@ -18,8 +18,10 @@ class SubSegmentTypeFactory extends Factory
      */
     public function definition(): array
     {
+        $segmentType = SegmentType::factory()->create();
+    
         return [
-            'segment_type_id' => SegmentType::all()->random(),
+            'segment_type_id' => $segmentType->id,
             'sub_segment_name' => $this->faker->sentence,
         ];
     }

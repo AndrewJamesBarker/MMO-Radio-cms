@@ -22,4 +22,9 @@ class SegmentType extends Model
     {
         return $this->hasMany(Segment::class);
     }
+    
+    public function subSegmentTypes()
+    {
+        return $this->hasMany(SubSegmentType::class);
+    }
 }

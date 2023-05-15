@@ -19,9 +19,9 @@ class SubSegmentType extends Model
         'segment_type_id',
     ];
 
-    public function segment_type()
+    public function segmentType()
     {
-        return $this->belongsTo(SegmentType::class, 'segment_type_id');
+        return $this->belongsTo(SegmentType::class);
     }
 
 }
