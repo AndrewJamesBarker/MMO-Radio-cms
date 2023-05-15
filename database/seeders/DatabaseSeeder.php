@@ -14,7 +14,6 @@ use App\Models\Project;
 use App\Models\Segment;
 use Illuminate\Database\Seeder;
 
-
 class DatabaseSeeder extends Seeder
 {
     /**
