@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Music;
 use App\Models\User;
 use App\Models\Reporter;
 use App\Models\Producer;
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        Music::truncate();
         User::truncate();
         Reporter::truncate();
         Producer::truncate();
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
         Project::truncate();
         Segment::truncate();
         
+        Music::factory()->count(4)->create();
         User::factory()->count(2)->create();
         Reporter::factory()->count(2)->create();
         Producer::factory()->count(2)->create();
