@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('internal_systems', function (Blueprint $table) {
+        Schema::create('scheduled_segments', function (Blueprint $table) {
             $table->id();
-            $table->string("request_api_url");
-            $table->string("system_name");
-            $table->string('system_icon')->nullable();
+            $table->foreignId('script_id')->nullable();
+            $table->foreignId('music_id')->nullable();
+            $table->timestamp('scheduled_for')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('internal_systems');
+        Schema::dropIfExists('scheduled_segments');
     }
 };

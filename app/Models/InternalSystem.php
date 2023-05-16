@@ -10,6 +10,7 @@ class InternalSystem extends Model
     use HasFactory;
 
     protected $fillable = [
+        "system_name",
         "request_api_url",
         "system_icon",
     ];

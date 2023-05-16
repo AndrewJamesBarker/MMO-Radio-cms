@@ -18,6 +18,7 @@ class InternalSystemFactory extends Factory
     public function definition(): array
     {
         return [
+            'system_name' => $this->faker->sentence,
             'request_api_url' => $this->faker->sentence,
             'system_icon' => $this->faker->sentence,
         ];
