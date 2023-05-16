@@ -13,6 +13,7 @@ use App\Models\SegmentField;
 use App\Models\InternalSystem;
 use App\Models\Project;
 use App\Models\Segment;
+use App\Models\Script;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
         InternalSystem::truncate();
         Project::truncate();
         Segment::truncate();
+        Script::truncate();
         
         Music::factory()->count(4)->create();
         User::factory()->count(2)->create();
@@ -47,6 +49,7 @@ class DatabaseSeeder extends Seeder
         InternalSystem::factory()->count(3)->create();
         Project::factory()->count(4)->create();
         Segment::factory()->count(4)->create();
+        Script::factory()->count(4)->create();
             
     }
 }
