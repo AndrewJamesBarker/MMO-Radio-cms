@@ -33,4 +33,8 @@ class Script extends Model
     {
         return $this->belongsTo(Producer::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

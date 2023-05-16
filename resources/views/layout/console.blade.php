@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>My Reporter</title>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{url('app.css')}}">
@@ -16,15 +16,15 @@
 
         <header class="w3-padding">
 
-            <h1 class="w3-text-red">Portfolio Console</h1>
+            <h1 class="w3-text-red">Reporter Console</h1>
 
             @if (Auth::check())
                 You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
                 <a href="/console/logout">Log Out</a> | 
                 <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
+                <!-- <a href="/">Website Home Page</a> -->
             @else
-                <a href="/">Return to My Portfolio</a>
+                <a href="/">Return to My Reporter</a>
             @endif
 
         </header>

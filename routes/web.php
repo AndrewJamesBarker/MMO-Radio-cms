@@ -5,7 +5,10 @@ use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\SegmentTypesController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +60,10 @@ Route::post('/console/types/add', [TypesController::class, 'add'])->middleware('
 Route::get('/console/types/edit/{type:id}', [TypesController::class, 'editForm'])->where('type', '[0-9]+')->middleware('auth');
 Route::post('/console/types/edit/{type:id}', [TypesController::class, 'edit'])->where('type', '[0-9]+')->middleware('auth');
 Route::get('/console/types/delete/{type:id}', [TypesController::class, 'delete'])->where('type', '[0-9]+')->middleware('auth');
+
+Route::get('/console/segment_types/list', [SegmentTypesController::class, 'list'])->middleware('auth'); 
+Route::get('/console/segment_types/add', [SegmentTypesController::class, 'addForm'])->middleware('auth');
+Route::post('/console/segment_types/add', [SegmentTypesController::class, 'add'])->middleware('auth');
+Route::get('/console/segment_types/edit/{segment_type:id}', [SegmentTypesController::class, 'editForm'])->where('segment_type', '[0-9]+')->middleware('auth');
+Route::post('/console/segment_types/edit/{segment_type:id}', [SegmentTypesController::class, 'edit'])->where('segment_type', '[0-9]+')->middleware('auth');
+Route::get('/console/segment_types/delete/{segment_type:id}', [SegmentTypesController::class, 'delete'])->where('segment_type', '[0-9]+')->middleware('auth');

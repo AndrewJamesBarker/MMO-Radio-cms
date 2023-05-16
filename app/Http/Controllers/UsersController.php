@@ -34,6 +34,7 @@ class UsersController extends Controller
             'last' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
+            // 'role' => 'required',
         ]);
 
         $user = new User();

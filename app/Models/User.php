@@ -23,6 +23,7 @@ class User extends Authenticatable
         'last',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -48,6 +49,16 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function segments()
+    {
+        return $this->hasMany(Segment::class);
+    }
+
+    public function scripts()
+    {
+        return $this->hasMany(Script::class);
     }
 
     public function projects()

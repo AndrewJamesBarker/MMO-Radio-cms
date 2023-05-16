@@ -34,5 +34,9 @@ class Segment extends Model
     {
         return $this->hasOne(Script::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
     
 }
