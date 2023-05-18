@@ -17,6 +17,7 @@ class SubSegmentType extends Model
     protected $fillable = [
         'sub_segment_name',
         'segment_type_id',
+        'type_name',
     ];
 
     public function segmentType()

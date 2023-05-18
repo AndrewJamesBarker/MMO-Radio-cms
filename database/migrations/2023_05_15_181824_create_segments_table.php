@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('segment_data');
-            $table->foreignId('reporter_id');
+            $table->foreignId('user_id');
             $table->foreignId('internal_system_id');
             $table->foreignId('segment_type_id');
             $table->timestamps();

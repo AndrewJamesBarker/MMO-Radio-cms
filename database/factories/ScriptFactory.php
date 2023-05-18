@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Producer;
+use App\Models\User;
 use App\Models\Segment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -24,7 +25,7 @@ class ScriptFactory extends Factory
             'chat_script' => $this->faker->paragraph,
             'script_approved' => $this->faker->sentence,
             'approval_date' => now(),
-            'producer_id' => Producer::all()->random(),
+            'user_id' => User::all()->random(),
             'segment_id' => Segment::all()->random(),
         ]; 
     }

@@ -15,7 +15,7 @@ class Script extends Model
         'script_approved',
         'approval_date',
         'segment_id',
-        'producer_id',
+        'user_id',
     ];
 
 
@@ -29,10 +29,10 @@ class Script extends Model
         return $this->belongsTo(Segment::class);
     }
 
-    public function producer()
-    {
-        return $this->belongsTo(Producer::class);
-    }
+    // public function producer()
+    // {
+    //     return $this->belongsTo(Producer::class);
+    // }
     public function user()
     {
         return $this->belongsTo(User::class);

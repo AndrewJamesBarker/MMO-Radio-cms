@@ -11,15 +11,15 @@ class Segment extends Model
     protected $fillable = [
         'title',
         'segment_data',
-        'reporter_id',
+        'user_id',
         'internal_system_id',
         'segment_type_id',
     ];
 
-    public function reporter()
-    {
-        return $this->belongsTo(Reporter::class, 'reporter_id');
-    }
+    // public function reporter()
+    // {
+    //     return $this->belongsTo(Reporter::class, 'reporter_id');
+    // }
 
     public function internalSystem()
     {

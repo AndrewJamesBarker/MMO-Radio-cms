@@ -10,7 +10,7 @@
         <tr class="w3-red">
             <th>Field Name</th>
             <th>Field Data Type</th>
-            <th>Segment Type ID</th>
+            <th>Segment Type Name</th>
             <th></th>
             <!-- <th>Created</th> -->
             <th></th>
@@ -21,7 +21,7 @@
             <tr>       
                 <td>{{$segment_field->field_name}}</td>  
                 <td>{{$segment_field->field_data_type}}</td>  
-                <td>{{$segment_field->segmenttype->id}}</td>
+                <td>{{$segment_field->segmenttype->type_name}}</td>
                 <td><a href="/console/segment_fields/edit/{{$segment_field->id}}">Edit</a></td>
                 <td><a href="/console/segment_fields/delete/{{$segment_field->id}}">Delete</a></td>
             </tr>

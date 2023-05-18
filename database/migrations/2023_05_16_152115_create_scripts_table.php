@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('scripts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('segment_id');
-            $table->foreignId('producer_id');
+            $table->foreignId('user_id');
             $table->string("script_audio_src");
             $table->text("chat_script");
             $table->string("script_approved");
