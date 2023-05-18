@@ -13,7 +13,7 @@
 
         <div class="w3-margin-bottom">
             <label for="sub_segment_name">Sub-Segment Name:</label>
-            <input type="sub_segment_name" name="sub_segment_name" id="sub_segment_name" value="{{old('sub_segment_name')}}" required>
+            <input type="text" name="sub_segment_name" id="sub_segment_name" value="{{old('sub_segment_name')}}" required>
             
             @if ($errors->first('sub_segment_name'))
                 <br>
