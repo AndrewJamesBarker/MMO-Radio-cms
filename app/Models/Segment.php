@@ -12,6 +12,7 @@ class Segment extends Model
         'title',
         'segment_data',
         'user_id',
+        'segment_image',
         'internal_system_id',
         'segment_type_id',
     ];
