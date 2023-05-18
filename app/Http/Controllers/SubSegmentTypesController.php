@@ -40,41 +40,38 @@ class SubSegmentTypesController extends Controller
             ->with('message', 'Sub-Segment Type has been added!');
     }
 
-    public function editForm(SegmentField $segmentField)
+    public function editForm(SubSegmentType $subSegmentType)
     {
-        return view('segment_fields.edit', [
-            'segment_field' => $segmentField,
+        return view('sub_segment_types.edit', [
+            'sub_segment_type' => $subSegmentType,
             'segment_type_id' => SegmentType::all(),
         ]);
     }
 
-    public function edit(SegmentField $segmentField)
+    public function edit(SubSegmentType $subSegmentType)
     {
 
         $attributes = request()->validate([
-            'field_name' => 'required',
-            'field_data_type' => 'required',
+            'sub_segment_name' => 'required',
             'segment_type_id' => 'required',
-            // 'type_name' => 'nullable',
         ]);
 
-        $segmentField->field_name = $attributes['field_name'];
-        $segmentField->field_data_type = $attributes['field_data_type'];
-        $segmentField->segment_type_id = $attributes['segment_type_id'];
-        // $segmentField->type_name = $attributes['type_name'];
-        $segmentField->save();
+        $subSegmentType->sub_segment_name = $attributes['sub_segment_name'];
+        $subSegmentType->segment_type_id = $attributes['segment_type_id'];
+ 
+        $subSegmentType->save();
 
-        return redirect('/console/segment_fields/list')
-            ->with('message', 'Segment Field has been edited!');
+        return redirect('/console/sub_segment_types/list')
+            ->with('message', 'Sub-Segment Field has been edited!');
     }
 
-    public function delete(SegmentField $segmentField)
+    public function delete(SubSegmentType $subSegmentType)
     {
         
-        $segmentField->delete();
+        $subSegmentType->delete();
         
-        return redirect('/console/segment_fields/list')
-            ->with('message', 'Segment Field has been deleted!');        
+        return redirect('/console/sub_segment_type/list')
+            ->with('message', 'Sub-Segment Type has been deleted!');        
     }
 
 }
