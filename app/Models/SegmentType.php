@@ -32,4 +32,5 @@ class SegmentType extends Model
     {
         return $this->hasMany(SegmentField::class);
     }
+    
 }

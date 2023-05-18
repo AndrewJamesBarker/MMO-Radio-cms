@@ -23,4 +23,5 @@ class SegmentField extends Model
     {
         return $this->belongsTo(SegmentType::class);
     }
+    
 }

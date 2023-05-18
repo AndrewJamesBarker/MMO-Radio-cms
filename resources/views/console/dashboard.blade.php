@@ -8,6 +8,7 @@
         <li><a href="/console/projects/list">Manage Projects</a></li>
         <li><a href="/console/types/list">Manage Types</a></li>
         <li><a href="/console/segment_types/list">Manage Segment Types</a></li>
+        <li><a href="/console/segment_fields/list">Manage Segment Fields</a></li>
         <li><a href="/console/users/list">Manage Users</a></li>
         <li><a href="/console/logout">Log Out</a></li>
     </ul>
