@@ -28,7 +28,7 @@
         @endforeach
     </table>
 
-    <a href="/console/projects/add" class="w3-button w3-green">New Segment Fields</a>
+    <a href="/console/segment_fields/add" class="w3-button w3-green">New Segment Fields</a>
 
 </section>
 

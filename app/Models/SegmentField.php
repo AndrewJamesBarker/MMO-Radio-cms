@@ -17,6 +17,7 @@ class SegmentField extends Model
         'field_name',
         'field_data_type',
         'segment_type_id',
+        'type_name',
     ];
 
     public function segmentType()

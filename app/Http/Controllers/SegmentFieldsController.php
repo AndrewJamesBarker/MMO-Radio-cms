@@ -30,14 +30,16 @@ class SegmentFieldsController extends Controller
             'field_name' => 'required',
             'field_data_type' => 'required',
             'segment_type_id' => 'required',
+            // 'type_name' => 'nullable',
         ]);
 
         $segmentField = new SegmentField();
         $segmentField->field_name = $attributes['field_name'];
         $segmentField->field_data_type = $attributes['field_data_type'];
         $segmentField->segment_type_id = $attributes['segment_type_id'];
-        $project->user_id = Auth::user()->id;
-        $project->save();
+        // $segmentField->type_name = $attributes['type_name'];
+        // $project->user_id = Auth::user()->id;
+        $segmentField->save();
 
         return redirect('/console/segment_fields/list')
             ->with('message', 'Segment Field has been added!');
@@ -47,7 +49,7 @@ class SegmentFieldsController extends Controller
     {
         return view('segment_fields.edit', [
             'segment_field' => $segmentField,
-            'segment_types' => SegmentType::all(),
+            'segment_type_id' => SegmentType::all(),
         ]);
     }
 
@@ -58,11 +60,13 @@ class SegmentFieldsController extends Controller
             'field_name' => 'required',
             'field_data_type' => 'required',
             'segment_type_id' => 'required',
+            // 'type_name' => 'nullable',
         ]);
 
         $segmentField->field_name = $attributes['field_name'];
         $segmentField->field_data_type = $attributes['field_data_type'];
         $segmentField->segment_type_id = $attributes['segment_type_id'];
+        // $segmentField->type_name = $attributes['type_name'];
         $segmentField->save();
 
         return redirect('/console/segment_fields/list')
