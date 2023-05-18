@@ -15,6 +15,9 @@ class Segment extends Model
         'segment_image',
         'internal_system_id',
         'segment_type_id',
+        "system_name",
+        "first",
+        "type_name",
     ];
 
     // public function reporter()

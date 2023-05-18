@@ -13,8 +13,10 @@
             <th>Segment Data</th>
             <th>User (Reporter)</th>
             <th>Segment Type</th>
-            <th>Internal System ID</th>
+            <th>Internal System Name</th>
             <th>Date Created</th>
+            <th></th>
+            <th></th>
             <th></th>
         </tr>
         @foreach ($segments as $segment)
@@ -25,12 +27,10 @@
                     @endif
                 </td>
                 <td>{{$segment->title}}</td>
-                <td>
-                    <a href="/segment/{{$segment->slug}}">
-                        {{$segment->slug}}
-                    </a>
-                </td>
-                <td>{{$segment->type->title}}</td>
+                <td>{{$segment->segment_data}}</td>
+                <td>{{$segment->user->first}}</td>
+                <td>{{$segment->segmenttype->type_name}}</td>
+                <td>{{$segment->internalsystem->system_name}}</td>
                 <td>{{$segment->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/segments/image/{{$segment->id}}">Image</a></td>
                 <td><a href="/console/segments/edit/{{$segment->id}}">Edit</a></td>
