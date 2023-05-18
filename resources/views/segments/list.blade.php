@@ -4,17 +4,17 @@
 
 <section class="w3-padding">
 
-    <h2>Manage segments</h2>
+    <h2>Manage Segments</h2>
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-red">
             <th></th>
-            <th>Name</th>
-            <th>Slug</th>
-            <th>Type</th>
-            <th>Created</th>
-            <th></th>
-            <th></th>
+            <th>Title</th>
+            <th>Segment Data</th>
+            <th>User (Reporter)</th>
+            <th>Segment Type</th>
+            <th>Internal System ID</th>
+            <th>Date Created</th>
             <th></th>
         </tr>
         @foreach ($segments as $segment)
