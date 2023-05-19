@@ -24,7 +24,7 @@ class SegmentFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'segment_data' => $this->faker->paragraph,
-            'segment_image' => $this->faker->sentence,
+            // 'image' => $this->faker->sentence,
             'user_id' => User::all()->random(),
             'internal_system_id' => InternalSystem::all()->random(),
             'segment_type_id' => SegmentType::all()->random(),

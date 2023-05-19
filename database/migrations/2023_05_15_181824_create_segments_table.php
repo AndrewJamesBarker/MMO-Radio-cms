@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('segment_data');
-            $table->text('segment_image')->nullable();
+            $table->text('image')->nullable();
             $table->foreignId('user_id');
             $table->foreignId('internal_system_id');
             $table->foreignId('segment_type_id');

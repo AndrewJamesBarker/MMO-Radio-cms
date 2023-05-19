@@ -91,3 +91,5 @@ Route::post('/console/segments/add', [SegmentsController::class, 'add'])->middle
 Route::get('/console/segments/edit/{segment:id}', [SegmentsController::class, 'editForm'])->where('segment', '[0-9]+')->middleware('auth');
 Route::post('/console/segments/edit/{segment:id}', [SegmentsController::class, 'edit'])->where('segment', '[0-9]+')->middleware('auth');
 Route::get('/console/segments/delete/{segment:id}', [SegmentsController::class, 'delete'])->where('segment', '[0-9]+')->middleware('auth');
+Route::get('/console/segments/image/{segment:id}', [SegmentsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
+Route::post('/console/segments/image/{segment:id}', [SegmentsController::class, 'image'])->where('segment', '[0-9]+')->middleware('auth');
