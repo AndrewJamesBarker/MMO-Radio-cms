@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Project;
+use App\Models\Segment;
+use App\Http\Controllers\InternalSystemsController;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
@@ -26,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        'projects' => Project::all(),
+        'segments' => Segment::all(),
     ]);
 });
 
@@ -93,3 +95,12 @@ Route::post('/console/segments/edit/{segment:id}', [SegmentsController::class, '
 Route::get('/console/segments/delete/{segment:id}', [SegmentsController::class, 'delete'])->where('segment', '[0-9]+')->middleware('auth');
 Route::get('/console/segments/image/{segment:id}', [SegmentsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
 Route::post('/console/segments/image/{segment:id}', [SegmentsController::class, 'image'])->where('segment', '[0-9]+')->middleware('auth');
+
+Route::get('/console/internal_systems/list', [InternalSystemsController::class, 'list'])->middleware('auth'); 
+Route::get('/console/internal_systems/add', [InternalSystemsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/internal_systems/add', [InternalSystemsController::class, 'add'])->middleware('auth');
+Route::get('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'editForm'])->where('internal_system', '[0-9]+')->middleware('auth');
+Route::post('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'edit'])->where('internal_system', '[0-9]+')->middleware('auth');
+Route::get('/console/internal_systems/delete/{internal_system:id}', [InternalSystemsController::class, 'delete'])->where('internal_system', '[0-9]+')->middleware('auth');
+Route::get('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
+Route::post('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'image'])->where('internal_system', '[0-9]+')->middleware('auth');
