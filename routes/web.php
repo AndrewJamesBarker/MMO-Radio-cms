@@ -11,6 +11,7 @@ use App\Http\Controllers\SegmentTypesController;
 use App\Http\Controllers\SegmentFieldsController;
 use App\Http\Controllers\SubSegmentTypesController;
 use App\Http\Controllers\SegmentsController;
+use App\Http\Controllers\SegmentFormController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -87,6 +88,15 @@ Route::get('/console/sub_segment_types/edit/{sub_segment_type:id}', [SubSegmentT
 Route::post('/console/sub_segment_types/edit/{sub_segment_type:id}', [SubSegmentTypesController::class, 'edit'])->where('sub_segment_type', '[0-9]+')->middleware('auth');
 Route::get('/console/sub_segment_types/delete/{sub_segment_type:id}', [SubSegmentTypesController::class, 'delete'])->where('sub_segment_type', '[0-9]+')->middleware('auth');
 
+Route::get('/console/internal_systems/list', [InternalSystemsController::class, 'list'])->middleware('auth'); 
+Route::get('/console/internal_systems/add', [InternalSystemsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/internal_systems/add', [InternalSystemsController::class, 'add'])->middleware('auth');
+Route::get('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'editForm'])->where('internal_system', '[0-9]+')->middleware('auth');
+Route::post('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'edit'])->where('internal_system', '[0-9]+')->middleware('auth');
+Route::get('/console/internal_systems/delete/{internal_system:id}', [InternalSystemsController::class, 'delete'])->where('internal_system', '[0-9]+')->middleware('auth');
+Route::get('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
+Route::post('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'image'])->where('internal_system', '[0-9]+')->middleware('auth');
+
 Route::get('/console/segments/list', [SegmentsController::class, 'list'])->middleware('auth'); 
 Route::get('/console/segments/add', [SegmentsController::class, 'addForm'])->middleware('auth');
 Route::post('/console/segments/add', [SegmentsController::class, 'add'])->middleware('auth');
@@ -96,11 +106,9 @@ Route::get('/console/segments/delete/{segment:id}', [SegmentsController::class, 
 Route::get('/console/segments/image/{segment:id}', [SegmentsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
 Route::post('/console/segments/image/{segment:id}', [SegmentsController::class, 'image'])->where('segment', '[0-9]+')->middleware('auth');
 
-Route::get('/console/internal_systems/list', [InternalSystemsController::class, 'list'])->middleware('auth'); 
-Route::get('/console/internal_systems/add', [InternalSystemsController::class, 'addForm'])->middleware('auth');
-Route::post('/console/internal_systems/add', [InternalSystemsController::class, 'add'])->middleware('auth');
-Route::get('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'editForm'])->where('internal_system', '[0-9]+')->middleware('auth');
-Route::post('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'edit'])->where('internal_system', '[0-9]+')->middleware('auth');
-Route::get('/console/internal_systems/delete/{internal_system:id}', [InternalSystemsController::class, 'delete'])->where('internal_system', '[0-9]+')->middleware('auth');
-Route::get('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
-Route::post('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'image'])->where('internal_system', '[0-9]+')->middleware('auth');
+
+Route::get('/console/segment_forms/list', [SegmentFormController::class, 'list'])->middleware('auth'); 
+Route::get('console/segment_forms/add', [SegmentFormController::class, 'showForm'])->name('segments.add')->middleware('auth');
+
+
+
