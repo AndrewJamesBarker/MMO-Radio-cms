@@ -11,7 +11,7 @@
             <th></th>
             <th>Title</th>
             <th>Segment Data</th>
-            <th>User (Reporter)</th>
+            <th>User</th>
             <th>Segment Type</th>
             <th>Internal System Name</th>
             <th>Date Created</th>

@@ -17,6 +17,7 @@ class Segment extends Model
         'segment_type_id',
         "system_name",
         "first",
+        "last",
         "type_name",
     ];
 
