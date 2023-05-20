@@ -109,6 +109,6 @@ Route::post('/console/segments/image/{segment:id}', [SegmentsController::class, 
 
 Route::get('/console/segment_forms/list', [SegmentFormController::class, 'list'])->middleware('auth'); 
 Route::get('console/segment_forms/add', [SegmentFormController::class, 'showForm'])->name('segments.add')->middleware('auth');
-
+Route::get('console/segment_forms/add/{segment_type_Id}', [SegmentFormController::class, 'showForm'])->name('segment_forms.add');
 
 

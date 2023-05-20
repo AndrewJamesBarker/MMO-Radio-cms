@@ -22,20 +22,37 @@ class SegmentFormController extends Controller
         ]);
     }
 
-    public function showForm(Request $request)
+
+    public function showForm($segment_type_id = null)
     {
-        $segmentTypeId = $request->query('segment_type_id');
+        if ($segment_type_id !== null) {
+            $segment_type = SegmentType::find($segment_type_id);
+
+            if (!$segment_type) {
+                abort(404); // Segment type not found
+            }
+
+            // Retrieve the fields associated with the segment type
+            $segment_fields = SegmentField::where('segment_type_id', $segment_type_id)->get();
+
+            return view('segment_forms.add', [
+                'segment_type' => $segment_type,
+                'segment_fields' => $segment_fields,
+                'segment_type_id' => $segmentTypeId,
+                'user_id' => User::all(),
+                'internal_system_id' => InternalSystem::all(),
+            ]);
+        }
+
+        // Handle the case when no segment type ID is provided
+        // You can add your own logic here if needed
 
         return view('segment_forms.add', [
-            'segmentTypeId' => $segmentTypeId,
-            'user_id' => User::all(),
-            'internal_system_id' => InternalSystem::all(),
-            'segment_fields' => SegmentField::all(),
+            'segment_fields' => [] // Pass an empty array if segment type ID is not provided
         ]);
-
-        // Load the form based on the segment type ID
-        // Perform any necessary logic here to retrieve the form based on the segment type ID
-
     }
+
+
+
 }
 

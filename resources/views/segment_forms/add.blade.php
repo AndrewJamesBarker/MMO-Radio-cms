@@ -21,8 +21,15 @@
                 <span class="w3-text-red">{{$errors->first('title')}}</span>
             @endif
         </div>
-       
 
+        <a href="{{ route('segments.add', ['segmentTypeId' => 1]) }}">Report</a>
+        <br>
+        <a href="{{ route('segments.add', ['segmentTypeId' => 2]) }}">Joke</a>
+        <br>
+        <a href="{{ route('segments.add', ['segmentTypeId' => 3]) }}">Game</a>
+        <br>
+        <br>
+       
         @foreach ($segment_fields as $segment_field)
             <label>{{ $segment_field->label }}</label>
 
@@ -39,11 +46,13 @@
         @endforeach
 
 
+
+
         <button type="submit" class="w3-button w3-green">Add Segment</button>
 
     </form>
 
-    <a href="/console/projects/list">Back to Segment List</a>
+    <a href="/console/segment_forms/list">Back to Segment List</a>
 
 </section>
 
