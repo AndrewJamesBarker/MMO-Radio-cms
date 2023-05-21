@@ -107,8 +107,17 @@ Route::get('/console/segments/image/{segment:id}', [SegmentsController::class, '
 Route::post('/console/segments/image/{segment:id}', [SegmentsController::class, 'image'])->where('segment', '[0-9]+')->middleware('auth');
 
 
-Route::get('/console/segment_forms/list', [SegmentFormController::class, 'list'])->middleware('auth'); 
-Route::get('console/segment_forms/add', [SegmentFormController::class, 'showForm'])->name('segments.add')->middleware('auth');
-Route::get('console/segment_forms/add/{segment_type_Id}', [SegmentFormController::class, 'showForm'])->name('segment_forms.add');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/console/segment_forms/list', [SegmentFormController::class, 'list'])->name('segment_forms.list');
+    Route::get('/console/segment_forms/add', [SegmentFormController::class, 'addForm'])->name('segment_forms.add')->middleware('auth');
+    Route::post('/console/segment_forms/store', [SegmentFormController::class, 'store'])->name('segment_forms.store')->middleware('auth');
+
+});
+
+
+
+
+
 
 
