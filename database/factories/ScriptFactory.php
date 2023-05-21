@@ -23,7 +23,7 @@ class ScriptFactory extends Factory
         return [
             'script_audio_src' => $this->faker->sentence,
             'chat_script' => $this->faker->paragraph,
-            'script_approved' => $this->faker->boolean(),
+            'script_status' => $this->faker->numberBetween(0,2),
             'approval_date' => now(),
             'user_id' => User::all()->random(),
             'segment_id' => Segment::all()->random(),
