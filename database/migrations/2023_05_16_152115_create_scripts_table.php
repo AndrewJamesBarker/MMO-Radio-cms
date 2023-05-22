@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string("script_audio_src");
             $table->text("chat_script");
-            $table->boolean("script_approved");
+            $table->integer("script_status");
             $table->timestamp('approval_date')->nullable();
             $table->timestamps();
         });
