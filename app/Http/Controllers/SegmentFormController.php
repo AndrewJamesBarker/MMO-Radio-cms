@@ -8,6 +8,7 @@ use App\Models\SegmentField;
 use App\Models\User;
 use App\Models\InternalSystem;
 use App\Models\Segment;
+use Illuminate\Support\Facades\Auth;
 
 class SegmentFormController extends Controller
 {
@@ -24,30 +25,41 @@ class SegmentFormController extends Controller
         return view('segment_forms.add', compact('segment_type_id', 'segmentFields'));
     }
 
-    public function store()
-    {
-        // Validate the form data
-        $attributes = request()->validate([
-            'title' => 'required',
-            // Add validation rules for other fields
-        ]);
+    public function store(Request $request)
+{
+    // Obtain the user ID
+    $user_id = Auth::user()->id;
 
-        // Create a new segment instance
-        $segment = new Segment();
+    $segment_type_id = $request->query('segment_type_id');
 
-        // Assign the form data to the segment model
-        $segment->title = request('title');
-        // Assign other form fields to the corresponding model attributes
+    // Merge the user_id with the form data
+    $attributes = array_merge($request->all(), ['user_id' => $user_id],['segment_type_id' => $segment_type_id]);
 
-        // Save the segment
-        $segment->save();
+    // Validate the form data
+    $validatedData = request()->validate([
+        'title' => 'required',
+        'segment_data' => 'required',
+        'segment_type_id' => 'required',
+        'internal_system_id' => 'required',
+    ]);
 
-        // Optionally, you can redirect to a success page or perform additional actions
+    // Create a new segment instance
+    $segment = new Segment();
 
-        // Redirect to the segment list page
-        return redirect()->route('segment_forms.list');
-    }
+    // Assign the form data to the segment model
+    $segment->title = $validatedData['title'];
+    $segment->segment_data = $validatedData['segment_data'];
+    $segment->segment_type_id = $validatedData['segment_type_id'];
+    $segment->internal_system_id = 1; 
+    $segment->user_id = $user_id;
+
+    // Save the segment
+    $segment->save();
+
+    // Optionally, you can redirect to a success page or perform additional actions
+
+    // Redirect to the segment list page
+    return redirect()->route('segment_forms.list');
 }
 
-    
-
+}

@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         SegmentType::factory()->count(3)->create();
         SubSegmentType::factory()->count(3)->create();
         SegmentField::factory()->count(3)->create();
-        InternalSystem::factory()->count(3)->create();
+        InternalSystem::factory()->count(1)->create();
         Project::factory()->count(4)->create();
         Segment::factory()->count(4)->create();
         Script::factory()->count(4)->create();
