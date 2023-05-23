@@ -80,6 +80,15 @@ class SegmentFormController extends Controller
         // Redirect to the segment list page
         return redirect()->route('segment_forms.list');
     }
-    
 
+    public function editForm(Segment $segment)
+    {
+        $segment = Segment::findOrFail($segment->id);
+        $segment_type_id = $segment->segment_type_id;
+        $segmentFields = SegmentField::all();
+        $subSegmentTypes = SubSegmentType::where('segment_type_id', $segment_type_id)->get();
+    
+        return view('segment_forms.edit', compact('segment', 'segment_type_id', 'segmentFields', 'subSegmentTypes'));
+    }
+    
 }
