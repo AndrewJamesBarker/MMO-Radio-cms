@@ -25,9 +25,10 @@ class SegmentType extends Model
     
     public function subSegmentTypes()
     {
-        return $this->hasMany(SubSegmentType::class);
+        return $this->hasMany(SubSegmentType::class, 'segment_type_id');
     }
-
+    
+    
     public function segmentFields()
     {
         return $this->hasMany(SegmentField::class);
