@@ -113,16 +113,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/console/segment_forms/add', [SegmentFormController::class, 'addForm'])->name('segment_forms.add')->middleware('auth');
     Route::post('/console/segment_forms/store', [SegmentFormController::class, 'store'])->name('segment_forms.store')->middleware('auth');
 
-    Route::get('/console/segment_forms/edit/{segment}', [SegmentFormController::class, 'editForm'])
-    ->name('segment_forms.edit')
-    ->where('segment', '[0-9]+')
-    ->middleware('auth');
-
-    Route::post('/console/segment_forms/edit/{segment:id}', [SegmentFormController::class, 'edit'])->where('segment', '[0-9]+')->middleware('auth');
-    Route::get('/console/segment_forms/delete/{segment:id}', [SegmentFormController::class, 'delete'])->where('segment', '[0-9]+')->middleware('auth');
-    Route::get('/console/segment_forms/image/{segment:id}', [SegmentFormController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
-    Route::post('/console/segment_forms/image/{segment:id}', [SegmentFormController::class, 'image'])->where('segment', '[0-9]+')->middleware('auth');
+    Route::get('/console/segment_forms/edit/{segment}', [SegmentFormController::class, 'editForm'])->name('segment_forms.edit_form')
+        ->where('segment', '[0-9]+')
+        ->middleware('auth');
+    Route::post('/console/segment_forms/edit/{segment}', [SegmentFormController::class, 'edit'])->name('segment_forms.edit')
+        ->where('segment', '[0-9]+')
+        ->middleware('auth');
+    Route::get('/console/segment_forms/delete/{segment:id}', [SegmentFormController::class, 'delete'])->name('segment_forms.delete')
+        ->where('segment', '[0-9]+')
+        ->middleware('auth');
+    Route::get('/console/segment_forms/image/{segment:id}', [SegmentFormController::class, 'imageForm'])->name('segment_forms.image_form')
+        ->where('segment', '[0-9]+')
+        ->middleware('auth');
+    Route::post('/console/segment_forms/image/{segment:id}', [SegmentFormController::class, 'image'])->name('segment_forms.image')
+        ->where('segment', '[0-9]+')
+        ->middleware('auth');
 });
+
 
 
 

@@ -50,7 +50,7 @@
                     @foreach ($subSegmentTypes as $subSegmentType)
                         @php
                             $decodedSegmentData = json_decode($segment->segment_data, true);
-                            $selected = old('sub_segment_type_id', $decodedSegmentData['sub_segment_name']) == $subSegmentType->sub_segment_name ? 'selected' : '';
+                            $selected = old('sub_segment_type_id', $decodedSegmentData['sub_segment_name'] ?? '') == $subSegmentType->sub_segment_name ? 'selected' : '';
                         @endphp
                         <option value="{{ $subSegmentType->id }}" {{ $selected }}>
                             {{ $subSegmentType->sub_segment_name }}
@@ -59,8 +59,9 @@
                 </select>
             @endif
 
-            <input type="hidden" name="segment_type_id" value="{{ $segment->segment_type_id }}">
-            <input type="hidden" name="internal_system_id" value="{{ $segment->internal_system_id }}">
+            <input type="hidden" name="segment_type_id" value="{{ $segment_type_id }}">
+            <input type="hidden" name="internal_system_id" value="1">
+
 
             <br>
             <button type="submit" class="w3-button w3-green">Update Segment Form</button>
