@@ -40,7 +40,7 @@
         <a href="/console/logout">Log Out</a> | 
         <a href="/console/dashboard">Dashboard</a>
     @else
-        <a href="/console/register">Register</a>
+        <a href="/console/reporter_reg">Register</a>
         <a href="/console/login">Login</a>
     @endif
 

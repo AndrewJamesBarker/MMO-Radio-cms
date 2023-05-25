@@ -130,6 +130,13 @@ Route::middleware('auth')->group(function () {
         ->middleware('auth');
 });
 
+    //reporter user registration
+
+    // routes/web.php
+
+    Route::get('/console/reporter/register', 'ReporterRegController@registerForm');
+    Route::post('/console/reporter/register', 'ReporterRegController@register');
+
 
 
 
