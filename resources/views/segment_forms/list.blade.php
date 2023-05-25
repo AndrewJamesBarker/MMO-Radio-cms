@@ -23,12 +23,12 @@
             <tr>
                 <td>
                     @if ($segment->image)
-                        <img src="{{asset('storage/'.$segment->image)}}" width="200">
+                        <img src="{{asset('storage/'.$segment->image)}}" width="100">
                     @endif
                 </td>
                 <td>{{$segment->title}}</td>
                 <td>{{$segment->segment_data}}</td>
-                <td>{{$segment->user->first}}</td>
+                <td>{{$segment->user->first . ' ' . $segment->user->last}}</td>
                 <td>{{$segment->segmenttype->type_name}}</td>
                 <td>{{$segment->internalsystem->system_name}}</td>
                 <td>{{$segment->created_at->format('M j, Y')}}</td>

@@ -50,6 +50,22 @@
             @endif
         </div>
 
+        <div class="w3-margin-bottom">
+            <label for="role">Role:</label>
+            <select name="role" id="role" required>
+                <option value="">Select a role</option>
+                <option value="Reporter" {{ old('role') == 'Reporter' ? 'selected' : '' }}>Reporter</option>
+                <option value="Producer" {{ old('role') == 'Producer' ? 'selected' : '' }}>Producer</option>
+                <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
+            </select>
+
+            @if ($errors->first('role'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('role')}}</span>
+            @endif
+        </div>
+
+
         <button type="submit" class="w3-button w3-green">Add User</button>
 
     </form>

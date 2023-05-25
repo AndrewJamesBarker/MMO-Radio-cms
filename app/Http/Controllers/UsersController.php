@@ -32,6 +32,7 @@ class UsersController extends Controller
         $attributes = request()->validate([
             'first' => 'required',
             'last' => 'required',
+            'role' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
             // 'role' => 'required',
@@ -40,6 +41,7 @@ class UsersController extends Controller
         $user = new User();
         $user->first = $attributes['first'];
         $user->last = $attributes['last'];
+        $user->role = $attributes['role'];
         $user->email = $attributes['email'];
         $user->password = $attributes['password'];
         $user->save();
@@ -64,6 +66,7 @@ class UsersController extends Controller
         $attributes = request()->validate([
             'first' => 'required',
             'last' => 'required',
+            'role' => 'required',
             'email' => [
                 'required',
                 'email',
@@ -74,6 +77,7 @@ class UsersController extends Controller
 
         $user->first = $attributes['first'];
         $user->last = $attributes['last'];
+        $user->role = $attributes['role'];
         $user->email = $attributes['email'];
 
         if($attributes['password']) $user->password = $attributes['password'];
