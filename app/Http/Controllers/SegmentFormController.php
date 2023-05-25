@@ -88,69 +88,54 @@ class SegmentFormController extends Controller
     
         return view('segment_forms.edit', compact('segment', 'segment_type_id', 'segmentFields', 'subSegmentTypes'));
     }
-  
-    public function edit(Request $request, $segment)
-{
-    // Retrieve the segment by ID
-    $segment = Segment::find($segment);
-
-    if (!$segment) {
-        // Handle the case when the segment is not found
-        return redirect()->back()->with('error', 'Segment not found');
-    }
-
-    // Get the segment type ID
-    $segmentTypeId = $segment->segment_type_id;
-
-    // Retrieve the segment fields for the specific segment type
-    $segmentFields = SegmentField::where('segment_type_id', $segmentTypeId)->get();
-
-    // Validate and update the form data
-
-    $segmentData = $segment->segment_data ? json_decode($segment->segment_data, true) : [];
-    $updatedSegmentData = $segmentData;
-
-    foreach ($segmentFields as $segmentField) {
-        $fieldName = $segmentField->field_name;
-        $fieldValue = $request->input($fieldName);
-
-        if ($fieldName === 'segment_data') {
-            // Update the segment_data array with the form data
-            foreach ($fieldValue as $key => $value) {
-                $updatedSegmentData[$key] = $value;
-            }
-        } else {
-            // Store in matching column name in segments table, if exists
-            $attributes = $segment->getAttributes();
-            if (array_key_exists($fieldName, $attributes)) {
-                // Use null coalescing operator to provide default value if field value is missing
-                $segment->{$fieldName} = $fieldValue ?? null;
-            }
+    public function edit(Request $request, $segmentId)
+    {
+        // Retrieve the segment by ID
+        $segment = Segment::find($segmentId);
+    
+        if (!$segment) {
+            // Handle the case when the segment is not found
+            return redirect()->back()->with('error', 'Segment not found');
         }
+    
+        // Validate the form data
+        $validatedData = $request->validate([
+            'custom_title' => 'required',
+            'segment_type_id' => 'required',
+            'internal_system_id' => 'required',
+            'sub_segment_type_id' => 'required',
+            'segment_data' => 'required',
+        ], [
+            'custom_title.required' => 'The title field is required.',
+            'segment_data.required' => 'The segment data field is required.',
+        ]);
+    
+        // Retrieve the existing segment_data
+        $segmentData = $segment->segment_data ? json_decode($segment->segment_data, true) : [];
+    
+        // Update the dynamic fields in the segment_data array
+        foreach ($request->segment_data as $fieldName => $fieldValue) {
+            $segmentData[$fieldName] = $fieldValue;
+        }
+    
+        // Retrieve the sub_segment_name
+        $subSegmentType = SubSegmentType::find($request->input('sub_segment_type_id'));
+        $subSegmentName = $subSegmentType ? $subSegmentType->sub_segment_name : null;
+    
+        // Update segment_data with sub_segment_name
+        $segmentData['sub_segment_name'] = $subSegmentName;
+    
+        // Update the segment model with the new data
+        $segment->title = $validatedData['custom_title'];
+        $segment->user_id = Auth::user()->id;
+        $segment->segment_data = json_encode($segmentData);
+    
+        // Save the segment
+        $segment->save();
+    
+        // Redirect back with success message
+        return redirect('/console/segment_forms/list')->with('message', 'Segment has been edited!');
     }
-
-    // Update segment_data column with the updated JSON object
-    $segment->segment_data = json_encode($updatedSegmentData);
-
-    // Merge additional attributes with the form data
-    $user_id = Auth::id();
-    $segment_type_id = $segment->segment_type_id; // Use the existing segment_type_id
-    $attributes = array_merge($request->all(), ['user_id' => $user_id, 'segment_type_id' => $segment_type_id]);
-
-    $validatedData = $request->validate([
-        'segment_type_id' => 'required',
-        'internal_system_id' => 'required',
-    ]);
-
-    $segment->segment_type_id = $validatedData['segment_type_id'];
-    $segment->internal_system_id = $validatedData['internal_system_id'];
-
-    // Save the segment
-    $segment->save();
-
-    // Redirect back with success message
-    return redirect()->back()->with('success', 'Segment updated successfully');
-}
-
-
+    
+    
 }
