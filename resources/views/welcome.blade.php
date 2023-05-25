@@ -48,7 +48,7 @@
 
 <section class="w3-padding">
 
-    <h2 class="w3-text-blue">Sign Up</h2>
+    <h2 class="w3-text-blue">Register</h2>
 
     <p>
         Email: <a href="mailto:email@address.com">email@address.com</a>
