@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\InternalSystem;
 use App\Models\Segment;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage; 
 
 class SegmentFormController extends Controller
 {
@@ -136,6 +137,47 @@ class SegmentFormController extends Controller
         // Redirect back with success message
         return redirect('/console/segment_forms/list')->with('message', 'Segment has been edited!');
     }
-    
+
+    public function imageForm(Segment $segment)
+    {
+        return view('segment_forms.image', [
+            'segment' => $segment,
+        ]);
+    }
+
+    public function image(Segment $segment)
+    {
+
+        $attributes = request()->validate([
+            'image' => 'required|image',
+        ]);
+
+        if($segment->image)
+        {
+            Storage::delete($segment->image);
+        }
+        
+        $path = request()->file('image')->store('segments');
+
+        $segment->image = $path;
+        $segment->save();
+        
+        return redirect('/console/segment_forms/list')
+            ->with('message', 'Segment image has been edited!');
+    }
+
+    public function delete(Segment $segment)
+    {
+
+        if($segment->image)
+        {
+            Storage::delete($segment->image);
+        }
+        
+        $segment->delete();
+        
+        return redirect('/console/segment_forms/list')
+            ->with('message', 'segment has been deleted!');        
+    }    
     
 }

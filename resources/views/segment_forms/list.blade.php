@@ -32,9 +32,9 @@
                 <td>{{$segment->segmenttype->type_name}}</td>
                 <td>{{$segment->internalsystem->system_name}}</td>
                 <td>{{$segment->created_at->format('M j, Y')}}</td>
-                <td><a href="/console/segments/image/{{$segment->id}}">Image</a></td>
+                <td><a href="/console/segment_forms/image/{{$segment->id}}">Image</a></td>
                 <td><a href="/console/segment_forms/edit/{{$segment->id}}">Edit</a></td>
-                <td><a href="/console/segments/delete/{{$segment->id}}">Delete</a></td>
+                <td><a href="/console/segment_forms/delete/{{$segment->id}}">Delete</a></td>
             </tr>
         @endforeach
     </table>
