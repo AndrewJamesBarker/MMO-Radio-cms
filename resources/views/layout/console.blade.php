@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Reporter</title>
+        <title>Brick MMO Radio Reporter</title>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{url('app.css')}}">
@@ -16,7 +16,7 @@
 
         <header class="w3-padding">
 
-            <h1 class="w3-text-red">Reporter Console</h1>
+            <h1 class="w3-text-red">Brick MMO Radio Reporter</h1>
 
             @if (Auth::check())
                 You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |

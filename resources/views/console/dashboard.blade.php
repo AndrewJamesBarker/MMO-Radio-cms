@@ -7,10 +7,8 @@
         @if(auth()->user()->role == 'Reporter')
             <li><a href="/console/segment_forms/list">Manage Segment Forms</a></li>
         @else
-            <li><a href="/console/projects/list">Manage Projects</a></li>
-            <li><a href="/console/types/list">Manage Types</a></li>
             <li><a href="/console/segments/list">Manage Segments (Admin)</a></li>
-            <li><a href="/console/segment_forms/list">Manage Segment Forms</a></li>
+            <li><a href="/console/segment_forms/list">Manage Segments</a></li>
             <li><a href="/console/segment_types/list">Manage Segment Types</a></li>
             <li><a href="/console/sub_segment_types/list">Manage Sub-Segment Types</a></li>
             <li><a href="/console/segment_fields/list">Manage Segment Fields</a></li>
