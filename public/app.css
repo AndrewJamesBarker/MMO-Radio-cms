@@ -8,23 +8,30 @@
 }
 
 .pagination-container {
-  margin-top: 20px;
+    margin-top: 20px;
+    text-align: center;
 }
 
-/* Style the previous arrow */
-.pagination-container .prev a {
-  width: 30px;
-  color: #333;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
+.pagination-container .pagination {
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-/* Style the next arrow */
-.pagination-container .next a {
-  color: #333;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
+.pagination-container .pagination .active {
+    background-color: #007bff;
+    color: #fff;
 }
+
+.pagination-container .pagination a {
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination-container .pagination a:hover {
+    background-color: #f5f5f5;
+}
+
 

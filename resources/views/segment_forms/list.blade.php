@@ -6,6 +6,8 @@
 
     <h2>Manage Segments</h2>
 
+    <div class="pagination-container">
+
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-red">
             <th></th>
@@ -38,7 +40,10 @@
             </tr>
         @endforeach
     </table>
-    {{$segments->links()}}
+
+        {{$segments->links()}}
+    </div>
+
     <a href="/console/segment_forms/add" class="w3-button w3-green">New Segment</a>
 
 </section>
