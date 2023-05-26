@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="w3-padding">
-    <h2> Segment</h2>
+    <h2>Segment Type</h2>
 
     <a href="{{ route('segment_forms.add', ['segment_type_id' => 1]) }}">Report</a>
     <br>
