@@ -48,10 +48,11 @@
 
 <section class="w3-padding">
 
-    <h2 class="w3-text-blue">Register</h2>
+    <h2 class="w3-text-blue"><a href="/console/reporter_reg">Register</a></h2>
 
     <p>
-        Email: <a href="mailto:email@address.com">email@address.com</a>
+        
+        <!-- Email: <a href="mailto:email@address.com">email@address.com</a> -->
     </p>
 
 </section>

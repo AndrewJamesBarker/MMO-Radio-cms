@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\RestrictedController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
@@ -10,8 +10,10 @@ use App\Models\InternalSystem;
 
 class InternalSystemsController extends Controller
 {
+
     public function list()
     {
+        
         return view('internal_systems.list', [
             'internal_systems' => InternalSystem::all()
         ]);

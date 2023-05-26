@@ -3,9 +3,10 @@
 @section('content')
 
 <section class="w3-padding">
-    <h2>Add User</h2>
+    <h2>Register Reporter</h2>
 
-    <form method="post" action="/console/users/add" novalidate class="w3-margin-bottom">
+    <form method="post" action="/console/reporter/add" novalidate class="w3-margin-bottom">
+
         @csrf
 
         <div class="w3-margin-bottom">
