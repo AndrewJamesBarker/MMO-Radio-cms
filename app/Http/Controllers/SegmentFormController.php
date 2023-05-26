@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\SegmentType;
 use App\Models\SegmentField;
@@ -16,8 +19,10 @@ class SegmentFormController extends Controller
 {
     public function list()
     {
-        $segments = Segment::all();
-        return view('segment_forms.list', compact('segments'));
+        $segments = Segment::paginate(2)->withQueryString();
+        return view('segments.list', [
+            'segments' => $segments
+        ]);
     }
 
     public function addForm(Request $request)

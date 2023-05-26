@@ -28,11 +28,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//welcome page segment results
+
 Route::get('/', function () {
-    return view('welcome', [
-        'segments' => Segment::all(),
-    ]);
+    $segments = Segment::latest()->take(3)->get();
+
+    return view('welcome', compact('segments'));
 });
+
 
 Route::get('/project/{project:slug}', function (Project $project) {
     return view('project', [

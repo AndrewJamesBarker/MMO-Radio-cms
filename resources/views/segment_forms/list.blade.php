@@ -38,7 +38,7 @@
             </tr>
         @endforeach
     </table>
-
+    {{$segments->links()}}
     <a href="/console/segment_forms/add" class="w3-button w3-green">New Segment</a>
 
 </section>

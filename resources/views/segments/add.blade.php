@@ -57,7 +57,7 @@
                 @foreach ($user_id as $user_id)
                     <option value="{{$user_id->id}}"
                         {{$user_id->id == old('user_id') ? 'selected' : ''}}>
-                        {{$user_id->first}}
+                        {{$user_id->first . ' ' . $user_id->last}}
                     </option>
                 @endforeach
             </select>
@@ -88,7 +88,7 @@
 
     </form>
 
-    <a href="/console/projects/list">Back to Segment List</a>
+    <a href="/console/segments/list">Back to Segment List</a>
 
 </section>
 

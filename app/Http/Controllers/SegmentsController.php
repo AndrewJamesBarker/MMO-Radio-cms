@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -15,10 +18,12 @@ class SegmentsController extends Controller
 {
     public function list()
     {
+        $segments = Segment::paginate(2)->withQueryString();
         return view('segments.list', [
-            'segments' => Segment::all()
+            'segments' => $segments
         ]);
     }
+    
 
     public function addForm()
     {
@@ -52,18 +57,21 @@ class SegmentsController extends Controller
             ->with('message', 'segment has been added!');
     }
 
-    public function editForm(Segment $segment)
+
+        public function editForm(Segment $segment)
     {
-        return view('segments.edit', [
-            'segment' => $segment,
-            'segment_type_id' => SegmentType::all(),
-            'user_id' => User::all(),
-            'internal_system_id' => InternalSystem::all(),
-        ]);
+        $segmentTypes = SegmentType::all();
+        $users = User::all();
+        $internalSystems = InternalSystem::all();
+
+        return view('segments.edit', compact('segment', 'segmentTypes', 'users', 'internalSystems'));
     }
+
 
     public function edit(Segment $segment)
     {
+
+        $segment_type_id = $segment->segment_type_id;
 
         $attributes = request()->validate([
             'title' => 'required',
@@ -73,11 +81,12 @@ class SegmentsController extends Controller
             'user_id' => 'required',
         ]);
 
+        
         $segment->title = $attributes['title'];
         $segment->segment_data = $attributes['segment_data'];
         $segment->segment_type_id = $attributes['segment_type_id'];
         $segment->internal_system_id = $attributes['internal_system_id'];
-        $segment->user_id = Auth::user()->id;
+        $segment->user_id = $attributes['user_id'];
         $segment->save();
 
         return redirect('/console/segments/list')

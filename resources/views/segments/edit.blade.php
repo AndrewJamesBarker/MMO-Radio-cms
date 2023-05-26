@@ -30,14 +30,15 @@
             @endif
         </div>
 
+            <!-- Segment Type -->
         <div class="w3-margin-bottom">
             <label for="segment_type_id">Segment Type:</label>
             <select name="segment_type_id" id="segment_type_id">
                 <option></option>
-                @foreach($segment_type_id as $segment_type_id)
-                    <option value="{{$segment_type_id->id}}"
-                        {{$segment_type_id->id == old('segment_type_id', $segment_type_id->segment_type_id) ? 'selected' : ''}}>
-                        {{$segment_type_id->type_name}}
+                @foreach($segmentTypes as $segmentType)
+                    <option value="{{$segmentType->id}}"
+                        {{$segmentType->id == old('segment_type_id', $segment->segment_type_id) ? 'selected' : ''}}>
+                        {{$segmentType->type_name}}
                     </option>
                 @endforeach
             </select>
@@ -47,14 +48,15 @@
             @endif
         </div>
 
+        <!-- User -->
         <div class="w3-margin-bottom">
             <label for="user_id">User:</label>
             <select name="user_id" id="user_id">
                 <option></option>
-                @foreach($user_id as $user_id)
-                    <option value="{{$user_id->id}}"
-                        {{$user_id->id == old('user_id', $user_id->user_id) ? 'selected' : ''}}>
-                        {{$user_id->first}}
+                @foreach($users as $user)
+                    <option value="{{$user->id}}"
+                        {{$user->id == old('user_id', $segment->user_id) ? 'selected' : ''}}>
+                        {{$user->first . " " . $user->last}}
                     </option>
                 @endforeach
             </select>
@@ -64,14 +66,15 @@
             @endif
         </div>
 
+        <!-- Internal System -->
         <div class="w3-margin-bottom">
             <label for="internal_system_id">Internal System:</label>
             <select name="internal_system_id" id="internal_system_id">
                 <option></option>
-                @foreach($internal_system_id as $internal_system_id)
-                    <option value="{{$internal_system_id->id}}"
-                        {{$internal_system_id->id == old('internal_system_id', $internal_system_id->internal_system_id) ? 'selected' : ''}}>
-                        {{$internal_system_id->system_name}}
+                @foreach($internalSystems as $internalSystem)
+                    <option value="{{$internalSystem->id}}"
+                        {{$internalSystem->id == old('internal_system_id', $segment->internal_system_id) ? 'selected' : ''}}>
+                        {{$internalSystem->system_name}}
                     </option>
                 @endforeach
             </select>
@@ -80,6 +83,7 @@
                 <span class="w3-text-red">{{$errors->first('internal_system_id')}}</span>
             @endif
         </div>
+
 
         <button type="submit" class="w3-button w3-green">Edit Segment</button>
 

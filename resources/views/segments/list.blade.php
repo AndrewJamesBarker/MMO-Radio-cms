@@ -7,7 +7,7 @@
     <h2>Manage Segments</h2>
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-        <tr class="w3-red">
+        <tr class="table-top">
             <th></th>
             <th>Title</th>
             <th>Segment Data</th>
@@ -28,7 +28,7 @@
                 </td>
                 <td>{{$segment->title}}</td>
                 <td>{{$segment->segment_data}}</td>
-                <td>{{$segment->user->first}}</td>
+                <td>{{$segment->user->first . ' ' . $segment->user->last}}</td>
                 <td>{{$segment->segmenttype->type_name}}</td>
                 <td>{{$segment->internalsystem->system_name}}</td>
                 <td>{{$segment->created_at->format('M j, Y')}}</td>
@@ -37,7 +37,12 @@
                 <td><a href="/console/segments/delete/{{$segment->id}}">Delete</a></td>
             </tr>
         @endforeach
+       
     </table>
+    
+    <div class="pagination-container">
+        {{$segments->links()}}
+    </div>
 
     <a href="/console/segments/add" class="w3-button w3-green">New Segment</a>
 

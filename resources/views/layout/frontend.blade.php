@@ -7,7 +7,8 @@
     <title>My Reporter | {{$title}}    </title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="{{url('app.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 
     <script src="{{url('app.js')}}"></script>
     
@@ -16,7 +17,7 @@
 
 <header class="w3-padding">
 
-    <h1 class="w3-text-red">My Reporter!</h1>
+    <h1 class="orange-text">My Reporter!</h1>
 
 </header>
 

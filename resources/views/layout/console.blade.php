@@ -16,7 +16,7 @@
 
         <header class="w3-padding">
 
-            <h1 class="w3-text-red">Brick MMO Radio Reporter</h1>
+            <h1 class="orange-text">Brick MMO Radio Reporter</h1>
 
             @if (Auth::check())
                 You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |

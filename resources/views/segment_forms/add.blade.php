@@ -43,10 +43,8 @@
                 </select>
             @endif
 
-
             <input type="hidden" name="segment_type_id" value="{{ $segment_type_id }}">
             <input type="hidden" name="internal_system_id" value="1">
-
             <br>
             <button type="submit" class="w3-button w3-green">Add Segment</button>
         </form>
