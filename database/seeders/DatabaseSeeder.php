@@ -39,20 +39,20 @@ class DatabaseSeeder extends Seeder
         Segment::truncate();
         Script::truncate();
         ScheduledSegment::truncate();
-        
+
         Music::factory()->count(4)->create();
         User::factory()->count(2)->create();
         Reporter::factory()->count(2)->create();
         Producer::factory()->count(2)->create();
         Type::factory()->count(3)->create();
-        SegmentType::factory()->count(3)->create();
+        SegmentType::factory()->count(1)->create();
         SubSegmentType::factory()->count(3)->create();
-        SegmentField::factory()->count(3)->create();
-        InternalSystem::factory()->count(1)->create();
+        SegmentField::factory()->count(5)->create();
+        InternalSystem::factory()->count(3)->create();
         Project::factory()->count(4)->create();
-        Segment::factory()->count(4)->create();
-        Script::factory()->count(4)->create();
+        Segment::factory()->count(15)->create();
+        Script::factory()->count(30)->create();
         ScheduledSegment::factory()->count(4)->create();
-            
+
     }
 }

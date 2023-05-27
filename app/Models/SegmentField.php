@@ -16,6 +16,7 @@ class SegmentField extends Model
     protected $fillable = [
         'field_name',
         'field_data_type',
+        'field_label',
         'segment_type_id',
         'type_name',
     ];
