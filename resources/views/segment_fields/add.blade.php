@@ -22,6 +22,16 @@
         </div>
 
         <div class="w3-margin-bottom">
+            <label for="field_label">Field Label:</label>
+            <input type="text" name="field_label" id="field_label" value="{{old('field_label')}}" required>
+            
+            @if ($errors->first('field_label'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('field_label')}}</span>
+            @endif
+        </div>
+
+        <div class="w3-margin-bottom">
             <label for="field_data_type">Field Data Type:</label>
             <input type="text" name="field_data_type" id="field_data_type" value="{{old('field_data_type')}}" required>
             

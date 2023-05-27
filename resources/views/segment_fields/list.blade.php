@@ -9,9 +9,9 @@
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-red">
             <th>Field Name</th>
+            <th>Field Label</th>
             <th>Field Data Type</th>
             <th>Segment Type Name</th>
-            <th></th>
             <!-- <th>Created</th> -->
             <th></th>
             <th></th>
@@ -20,6 +20,7 @@
         @foreach ($segment_fields as $segment_field)
             <tr>       
                 <td>{{$segment_field->field_name}}</td>  
+                <td>{{$segment_field->field_label}}</td>  
                 <td>{{$segment_field->field_data_type}}</td>  
                 <td>{{$segment_field->segmenttype->type_name}}</td>
                 <td><a href="/console/segment_fields/edit/{{$segment_field->id}}">Edit</a></td>

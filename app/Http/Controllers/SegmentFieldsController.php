@@ -28,6 +28,7 @@ class SegmentFieldsController extends Controller
 
         $attributes = request()->validate([
             'field_name' => 'required',
+            'field_label' => 'required',
             'field_data_type' => 'required',
             'segment_type_id' => 'required',
             // 'type_name' => 'nullable',
@@ -35,6 +36,7 @@ class SegmentFieldsController extends Controller
 
         $segmentField = new SegmentField();
         $segmentField->field_name = $attributes['field_name'];
+        $segmentField->field_label = $attributes['field_label'];
         $segmentField->field_data_type = $attributes['field_data_type'];
         $segmentField->segment_type_id = $attributes['segment_type_id'];
         // $segmentField->type_name = $attributes['type_name'];
@@ -58,12 +60,14 @@ class SegmentFieldsController extends Controller
 
         $attributes = request()->validate([
             'field_name' => 'required',
+            'field_label' => 'required',
             'field_data_type' => 'required',
             'segment_type_id' => 'required',
             // 'type_name' => 'nullable',
         ]);
 
         $segmentField->field_name = $attributes['field_name'];
+        $segmentField->field_label = $attributes['field_label'];
         $segmentField->field_data_type = $attributes['field_data_type'];
         $segmentField->segment_type_id = $attributes['segment_type_id'];
         // $segmentField->type_name = $attributes['type_name'];
