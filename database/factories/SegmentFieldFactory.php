@@ -18,11 +18,13 @@ class SegmentFieldFactory extends Factory
      */
     public function definition(): array
     {
-    
+
+        // force seeding segmentfields to be linked to report segment_type
         return [
-            'segment_type_id' => SegmentType::all()->random(),
-            'field_name' => $this->faker->sentence,
-            'field_data_type' => $this->faker->sentence,
+            'segment_type_id' => 1,
+            'field_name' => $this->faker->word(),
+            'field_data_type' => $this->faker->randomElement(['text','textarea']),
+            'field_data_type' => "text",
         ];
     }
 }
