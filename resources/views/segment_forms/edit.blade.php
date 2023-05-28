@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="w3-padding">
-    <h2>Edit Segment Form</h2>
+    <h2>Edit Segment</h2>
 
     @if (isset($segmentFields))
     <form method="post" action="{{ route('segment_forms.edit', ['segment' => $segment->id]) }}" novalidate>
@@ -11,7 +11,7 @@
         @foreach ($segmentFields as $segmentField)
             @if ($segmentField->segment_type_id == $segment_type_id)
                 <br>
-                <label>{{ $segmentField->field_name }}</label>
+                <label>{{ $segmentField->field_label }}</label>
                 @if (preg_match('/^title$/i', $segmentField->field_name))
                     @php
                         $fieldName = 'custom_title'; // Use a custom name for the input field
