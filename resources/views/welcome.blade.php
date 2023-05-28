@@ -27,7 +27,7 @@
             </div>
             
             @if ($segment->image)
-                <div class="w3-container w3-margin-top">
+                <div class="w3-container w3-margin-top w3-padding">
                     <img src="{{asset('storage/'.$segment->image)}}" width="100">
                 </div>
             @endif

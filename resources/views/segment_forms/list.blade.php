@@ -4,10 +4,10 @@
 
 <section class="w3-padding">
 
-    <h2>Manage Segments</h2>
+    <h2 class="med-titles-">Manage Segments</h2>
 
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-        <tr class="w3-red">
+    <table class="w3-table w3-margin-bottom">
+        <tr class="table-top">
             <th></th>
             <th>Title</th>
             <th>Segment Data</th>
@@ -23,7 +23,7 @@
             <tr>
                 <td>
                     @if ($segment->image)
-                        <img src="{{asset('storage/'.$segment->image)}}" width="100">
+                        <img src="{{asset('storage/'.$segment->image)}}" width="200">
                     @endif
                 </td>
                 <td>{{$segment->title}}</td>

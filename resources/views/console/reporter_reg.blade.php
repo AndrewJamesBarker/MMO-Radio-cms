@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="w3-padding">
-    <h2>Register Reporter</h2>
+    <h2 class="crud-titles">Register Reporter</h2>
 
     <form method="post" action="/console/reporter/add" novalidate class="w3-margin-bottom">
 

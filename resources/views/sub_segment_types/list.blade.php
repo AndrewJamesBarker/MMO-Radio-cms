@@ -4,10 +4,10 @@
 
 <section class="w3-padding">
 
-    <h2>Manage Sub-Segment Types</h2>
+    <h2 class="med-titles">Manage Sub-Segment Types</h2>
 
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-        <tr class="w3-red">
+    <table class="w3-table w3-margin-bottom">
+        <tr class="table-top">
             <th>Sub-Segment Name</th>
             <th>Segment Type Name</th>
             <th></th>
