@@ -51,26 +51,23 @@ class SegmentFieldsController extends Controller
     {
         return view('segment_fields.edit', [
             'segment_field' => $segmentField,
-            'segment_type_id' => SegmentType::all(),
+            'segment_type' => SegmentType::all(),
         ]);
     }
 
     public function edit(SegmentField $segmentField)
     {
-
         $attributes = request()->validate([
             'field_name' => 'required',
             'field_label' => 'required',
             'field_data_type' => 'required',
             'segment_type_id' => 'required',
-            // 'type_name' => 'nullable',
         ]);
 
         $segmentField->field_name = $attributes['field_name'];
         $segmentField->field_label = $attributes['field_label'];
         $segmentField->field_data_type = $attributes['field_data_type'];
         $segmentField->segment_type_id = $attributes['segment_type_id'];
-        // $segmentField->type_name = $attributes['type_name'];
         $segmentField->save();
 
         return redirect('/console/segment_fields/list')

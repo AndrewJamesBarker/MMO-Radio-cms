@@ -19,18 +19,24 @@
             @foreach ($segmentFields as $segmentField)
                 @if ($segmentField->segment_type_id == $segment_type_id)
                     <br>     
-                    <label>{{ $segmentField->field_name }}</label>
-                    @if ($segmentField->field_data_type == "text")
-                        <input type="text" name="{{ preg_match('/^title$/i', $segmentField->field_name) ? 'title' : 'segment_data['.$segmentField->field_name.']' }}">
-                    @elseif ($segmentField->field_data_type == "textarea")
-                        <textarea name="segment_data[{{ $segmentField->field_name }}]" id="{{ $segmentField->field_name }}"></textarea>
-                    @elseif ($segmentField->field_data_type == "checkbox")
-                        <input type="checkbox" name="segment_data[{{ $segmentField->field_name }}]" id="{{ $segmentField->field_name }}" value="1">
-                    @elseif ($segmentField->field_data_type == "radio")
-                        <input type="radio" name="segment_data[{{ $segmentField->field_name }}]" id="{{ $segmentField->field_name }}" value="1">
+                    @if (preg_match('/^title$/i', $segmentField->field_name))
+                        <label>{{ $segmentField->field_label }}</label>
+                        <input type="text" name="title">
+                    @else
+                        <label>{{ $segmentField->field_label }}</label>
+                        @if ($segmentField->field_data_type == "text")
+                            <input type="text" name="segment_data[{{ $segmentField->field_label }}]">
+                        @elseif ($segmentField->field_data_type == "textarea")
+                            <textarea name="segment_data[{{ $segmentField->field_label }}]" id="{{ $segmentField->field_label }}"></textarea>
+                        @elseif ($segmentField->field_data_type == "checkbox")
+                            <input type="checkbox" name="segment_data[{{ $segmentField->field_label }}]" id="{{ $segmentField->field_label }}" value="1">
+                        @elseif ($segmentField->field_data_type == "radio")
+                            <input type="radio" name="segment_data[{{ $segmentField->field_label }}]" id="{{ $segmentField->field_label }}" value="1">
+                        @endif
                     @endif
                 @endif
             @endforeach
+
 
             @if ($subSegmentTypes->count() > 0)
                 <br>
