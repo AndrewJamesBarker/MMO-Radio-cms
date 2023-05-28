@@ -19,7 +19,7 @@ class SegmentFormController extends Controller
 {
     public function list()
     {
-        $segments = Segment::paginate(8)->withQueryString();
+        $segments = Segment::paginate(1)->withQueryString();
         return view('segment_forms.list', [
             'segments' => $segments
         ]);

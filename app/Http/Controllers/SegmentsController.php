@@ -18,7 +18,7 @@ class SegmentsController extends Controller
 {
     public function list()
     {
-        $segments = Segment::paginate(2)->withQueryString();
+        $segments = Segment::paginate(8)->withQueryString();
         return view('segments.list', [
             'segments' => $segments
         ]);
