@@ -19,9 +19,30 @@
 </head>
 <body class="w3-padding">
 
-<header class="w3-padding">
+<header class="w3-padding header">
 
-    <h1 class="big-titles orange-text">BrickMMO REPORTER</h1>
+    <h1 class="big-titles frontend-title"><span class="red-text">BRICK</span><span class="orange-text">MMO</span> <span class="med-weight">Reporter</span></h1>
+
+    <div class="nav">
+        <p class="user-name-display">
+        @if (Auth::check())
+        You are logged in as {{auth()->user()->first}} {{auth()->user()->last}}
+        </p>
+   
+        <span>
+        <h3 class="w3-text-blue"><a href="/console/logout">Log Out</a> | <a href="/console/dashboard">Dashboard</a></h3>
+        </span>
+         
+    @else
+        <span>
+        <h3 class="w3-text-blue"><a href="/console/reporter_reg">Register</a> | <a href="/console/login">Login</a></h3>
+        </span>
+  
+       
+        
+    @endif  
+
+    </div>
 
 </header>
 
@@ -29,25 +50,32 @@
 
 @yield('content')
 
-<hr>
+
 
 <footer class="w3-padding">
 
-    Footer Text | 
+    @if (Auth::check())
+        You are logged in as {{auth()->user()->first}} {{auth()->user()->last}}  
+        <span>
+        <h2 class="w3-text-blue"><a href="/console/logout">Log Out</a> | <a href="/console/dashboard">Dashboard</a></h2>
+        </span>
+         
+    @else
+        <span>
+        <h2 class="w3-text-blue"><a href="/console/reporter_reg">Register</a> | <a href="/console/login">Login</a></h2>
+        </span>
+  
+       
+        
+    @endif    
+
     Copyright {{date('Y')}}
     <!-- <a href="#">Facebook</a> | 
     <a href="#">Instagram</a> -->
 
     <br>
 
-    @if (Auth::check())
-        You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} | 
-        <a href="/console/logout">Log Out</a> | 
-        <a href="/console/dashboard">Dashboard</a>
-    @else
-        <a href="/console/reporter_reg">Register</a>
-        <a href="/console/login">Login</a>
-    @endif
+
 
 </footer>
 

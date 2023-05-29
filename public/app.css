@@ -1,11 +1,99 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.1rem;
+    /* color: white;
+    background-color: black; */
 }
 
-.orange-text {
-  color: #eb741d;
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
 }
+
+.nav a {
+  text-decoration: none;
+}
+
+.frontend-title {
+  padding: 2rem;
+}
+
+.nav {
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.frontend-para {
+  font-size: 1.4rem;
+}
+
+/* w3 manipulation */
+
+.w3-container {
+  /* background-color: white; */
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.w3-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 8px;
+}
+
+
+.w3-button {
+  padding: 9px 17px;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.w3-green {
+  color: #fff;
+  background-color: #4CAF50;
+}
+
+.w3-green:hover {
+  background-color: #45a049;
+}
+
+.w3-green:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+.w3-green:active {
+  background-color: #3d8e41;
+}
+
+/* form background */
+
+.orange-background {
+  color: #fff;
+  background-color: #eb741d;
+}
+
+.black-background {
+  color: #fff;
+  background-color: black;
+}
+
 
 .table-top {
     margin: 0;
@@ -14,9 +102,29 @@ body {
     color: white;
 }
 
+.user-name-display {
+  position: absolute;
+  left: 4.2rem;
+  top: 6rem;
+}
+
+.console-login-name {
+  padding-left: 3.4rem;
+}
+
+/* text */
+
+
+
 .big-titles {
   text-align: center;
+  font-weight: 600;
+  letter-spacing: .8px;
   font-size: 2.5rem;
+}
+
+.med-weight {
+  font-weight: 400;
 }
 
 .med-titles {
@@ -28,11 +136,16 @@ body {
   color: #eb062c;
 }
 
+.orange-text {
+  color: #eb741d;
+}
+
 .font-medium {
     font-size: 1.1em;
     font-size: 500;
 
 }
+
 
 .para-container {
   margin-left: auto;
@@ -40,6 +153,9 @@ body {
   text-align: center;
   width: 75%;
 }
+
+
+/* pagination */
 
 .pagination-container {
     margin-top: 20px;
@@ -61,33 +177,4 @@ body {
     transition: background-color 0.3s;
 }
 
-.w3-button {
-    padding: 9px 17px;
-    font-size: 1.1em;
-    font-weight: 500;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 1em;
-  }
-  
-  .w3-green {
-    color: #fff;
-    background-color: #4CAF50;
-  }
-  
-  .w3-green:hover {
-    background-color: #45a049;
-  }
-  
-  .w3-green:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
-  }
-  
-  .w3-green:active {
-    background-color: #3d8e41;
-  }
   

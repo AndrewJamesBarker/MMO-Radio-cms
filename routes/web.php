@@ -32,7 +32,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $segments = Segment::latest()->take(3)->get();
-
     return view('welcome', compact('segments'));
 });
 

@@ -16,20 +16,29 @@
     </head>
     <body>
 
-        <header class="w3-padding">
+    <header class="w3-padding header">
 
-            <h1 class="orange-text">Brick MMO Radio Reporter</h1>
+    <h1 class="big-titles frontend-title"><span class="red-text">BRICK</span><span class="orange-text">MMO</span> <span class="med-weight">Reporter</span></h1>
+
+    <div class="nav">
+     
+        <span>
+        <h3 class="w3-text-blue"><a href="/console/logout">Log Out</a> | <a href="/console/dashboard">Dashboard</a> | <a href="/">Home Page</a></h3>
+        </span>
+          
+    </div>
+
+    </header>
+
+        <div class="console-login-name">
 
             @if (Auth::check())
-                You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
+                You are logged in as {{auth()->user()->first}} {{auth()->user()->last}}
             @else
                 <a href="/">Return to My Reporter</a>
             @endif
 
-        </header>
+        </div>
 
         <hr>
 
