@@ -4,9 +4,9 @@
 
 <section class="w3-padding">
 
-    <h2 class="w3-text-blue">Welcome!</h2>
+    <!-- <h2 class="w3-text-blue med-titles">Welcome!</h2> -->
 
-    <p>
+    <p class="para-container">
         As a reporter, you can do many things. You can create ideas for
         news stories, or create segments like trivia, games, songs,
         and advertisements! See below for some examples.
@@ -18,7 +18,7 @@
 
 <section class="w3-padding w3-container">
 
-    <h2 class="w3-text-blue">Segments</h2>
+    <h2 class="w3-text-blue med-titles">Segments</h2>
 
     @foreach ($segments as $segment)
         <div class="w3-card w3-margin">

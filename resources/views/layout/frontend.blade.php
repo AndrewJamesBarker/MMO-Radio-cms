@@ -21,7 +21,7 @@
 
 <header class="w3-padding">
 
-    <h1 class="big-titles orange-text">MY REPORTER</h1>
+    <h1 class="big-titles orange-text">BrickMMO REPORTER</h1>
 
 </header>
 
