@@ -3,8 +3,9 @@
 @section ('content')
 
 <section class="w3-padding">
-
-    <h2 class="med-titles-">Manage Segments</h2>
+    @foreach ($segments as $segment)
+    <h2 class="med-titles">Manage {{$segment->segmenttype->type_name}}</h2>
+    @endforeach
 
     <table class="w3-table w3-margin-bottom">
         <tr class="table-top">
@@ -38,12 +39,12 @@
             </tr>
         @endforeach
     </table>
+    
+    <a href="/console/segment_forms/add" class="w3-button w3-green">New Segment</a>
 
     <div class="pagination-container">
         {{$segments->links()}}
     </div>
-    
-    <a href="/console/segment_forms/add" class="w3-button w3-green">New Segment</a>
 
 </section>
 

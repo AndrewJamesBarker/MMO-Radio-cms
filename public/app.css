@@ -20,11 +20,11 @@ body {
 }
 
 .frontend-title {
-  padding: 2rem;
+  padding: 2rem 2rem 0rem 2rem;
 }
 
 .nav {
-  padding: 2rem;
+  padding: 2rem 2rem 0rem 2rem;
   font-size: 1.5rem;
 }
 
@@ -61,7 +61,7 @@ body {
   cursor: pointer;
   border-radius: 8px;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: .8em;
 }
 
 .w3-green {
@@ -96,6 +96,7 @@ body {
 
 
 .table-top {
+    padding: 4.5rem;
     margin: 0;
     border: none;
     background-color: black;
@@ -103,6 +104,7 @@ body {
 }
 
 .user-name-display {
+  font-size: 1.2rem;
   position: absolute;
   left: 4.2rem;
   top: 6rem;
@@ -113,8 +115,6 @@ body {
 }
 
 /* text */
-
-
 
 .big-titles {
   text-align: center;
@@ -130,6 +130,7 @@ body {
 .med-titles {
     text-align: center;
     font-weight: 400;
+    padding: 1rem;
 }
 
 .red-text {
@@ -146,7 +147,6 @@ body {
 
 }
 
-
 .para-container {
   margin-left: auto;
   margin-right: auto;
@@ -159,6 +159,7 @@ body {
 
 .pagination-container {
     margin-top: 20px;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -177,4 +178,45 @@ body {
     transition: background-color 0.3s;
 }
 
-  
+/* w3-Table */
+/* 
+.w3-table {
+  width: 90%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border: none;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w3-table th,
+.w3-table td {
+  text-align: left;
+  padding: 1.1rem;
+}
+
+.w3-table th {
+  background-color: black;
+}
+
+.w3-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.w3-table-hover tr:hover {
+  background-color: #ddd;
+}
+
+.w3-table-bordered {
+  border: 1px solid #ccc;
+}
+
+.w3-table-bordered th,
+.w3-table-bordered td {
+  border: 1px solid #ccc;
+}
+
+.w3-table-bordered tr:nth-child(even) {
+  background-color: #f2f2f2;
+} */

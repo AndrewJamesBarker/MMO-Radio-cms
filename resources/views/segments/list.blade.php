@@ -4,7 +4,9 @@
 
 <section class="w3-padding">
 
-    <h2 class="med-titles">Manage Segments</h2>
+@foreach ($segments as $segment)
+    <h2 class="med-titles">Manage {{$segment->segmenttype->type_name}}</h2>
+    @endforeach
 
     <table class="w3-table w3-margin-bottom">
         <tr class="table-top">
