@@ -4,6 +4,10 @@
 <section class="w3-padding">
     <h2>Edit Segment</h2>
 
+
+<!-- retrieving, decoding from json, separating title from segment_data and inserting into columns  
+using field_name as segment_data json keys -->
+
     @if (isset($segmentFields))
     <form method="post" action="{{ route('segment_forms.edit', ['segment' => $segment->id]) }}" novalidate>
         @csrf
@@ -46,6 +50,8 @@
             @endif
         @endforeach
 
+    <!-- editing sub_segment_data in the segment_data json object -->
+
         @if ($subSegmentTypes->count() > 0)
             <br>
             <label>Select Sub-Segment Type</label>
@@ -62,6 +68,9 @@
                 @endforeach
             </select>
         @endif
+
+<!-- hidden fields default to user role reporter(done in controller), internal_system value 1 is reporters, 
+and segment_type of whichever user selected type (report/joke/game/etc) -->
 
         <input type="hidden" name="segment_type_id" value="{{ $segment_type_id }}">
 
