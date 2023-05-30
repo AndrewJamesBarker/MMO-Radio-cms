@@ -1,7 +1,6 @@
-@extends ('layout.console')
+@extends('layout.console')
 
-@section ('content')
-
+@section('content')
 
 <section class="w3-padding form-container">
 
@@ -11,8 +10,8 @@
 
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="sub_segment_name">Sub-Segment Name:</label>
+        <div class="form-group">
+            <label for="sub_segment_name" class="form-labels">Sub-Segment Name:</label>
             <input type="text" name="sub_segment_name" id="sub_segment_name" value="{{old('sub_segment_name')}}" required>
             
             @if ($errors->first('sub_segment_name'))
@@ -21,14 +20,14 @@
             @endif
         </div>
     
-        <div class="w3-margin-bottom">
-            <label for="segment_type_id">Segment Type:</label>
+        <div class="form-group">
+            <label for="segment_type_id" class="form-labels">Segment Type:</label>
             <select name="segment_type_id" id="segment_type_id">
                 <option></option>
-                @foreach ($segment_type_id as $segment_type_id)
-                    <option value="{{$segment_type_id->id}}"
-                        {{$segment_type_id->id == old('segment_type_id') ? 'selected' : ''}}>
-                        {{$segment_type_id->type_name}}
+                @foreach ($segment_type_id as $segmentType)
+                    <option value="{{$segmentType->id}}"
+                        {{$segmentType->id == old('segment_type_id') ? 'selected' : ''}}>
+                        {{$segmentType->type_name}}
                     </option>
                 @endforeach
             </select>
@@ -42,7 +41,7 @@
 
     </form>
 
-    <a href="/console/sub_segment_types/list">Back to Sub-Segment Type List</a>
+    <a href="/console/sub_segment_types/list" class="w3-button orange-background">Back to Sub-Segment Types</a>
 
 </section>
 

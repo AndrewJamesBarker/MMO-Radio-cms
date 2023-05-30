@@ -13,7 +13,7 @@ class InternalSystemsController extends Controller
 
     public function list()
     {
-        
+    
         return view('internal_systems.list', [
             'internal_systems' => InternalSystem::all()
         ]);
@@ -21,8 +21,12 @@ class InternalSystemsController extends Controller
 
     public function addForm()
     {
-        return view('internal_systems.add');
+        return view('internal_systems.add', [
+            'system_names' => InternalSystem::select('id', 'system_name')->get(),
+        ]);
     }
+    
+    
     
     public function add()
     {

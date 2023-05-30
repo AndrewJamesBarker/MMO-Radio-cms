@@ -18,14 +18,16 @@
 
 <section class="w3-padding">
 
-    <h2 class="med-titles">Segments</h2>
+    <h2 class="med-titles">Segments Of The Past</h2>
 
     @foreach ($segments as $segment)
         <div class="w3-card w3-margin">
             <div class="w3-container black-background">
                 <h3>{{$segment->title}}</h3>
             </div>
+            <p>{{ data_get(json_decode($segment->segment_data), 'sub_segment_name') }}</p>
             <p>{{ data_get(json_decode($segment->segment_data), 'content') }}</p>
+            <p>{{ data_get(json_decode($segment->segment_data), 'joke') }}</p>
             @if ($segment->image)
                 <div class="w3-container w3-margin-top w3-padding">
                     <img src="{{asset('storage/'.$segment->image)}}" width="100">

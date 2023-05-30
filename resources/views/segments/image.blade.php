@@ -2,6 +2,8 @@
 
 @section ('content')
 
+<!-- these views arent in use, see segment_forms -->
+
 <section class="w3-padding form-container">
 
     <h2>Segment Image</h2>

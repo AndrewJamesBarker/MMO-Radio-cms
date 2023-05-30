@@ -5,9 +5,9 @@
 <section class="w3-padding">
     <ul id="dashboard">
         @if(auth()->user()->role == 'Reporter')
-            <li><a href="/console/segment_forms/list">Manage Segment Forms</a></li>
+            <li><a href="/console/segment_forms/list">Manage Segments</a></li>
         @else
-            <li><a href="/console/segments/list">Manage Segments (Admin)</a></li>
+            <!-- <li><a href="/console/segments/list">Manage Segments (Admin)</a></li> -->
             <li><a href="/console/segment_forms/list">Manage Segments</a></li>
             <li><a href="/console/segment_types/list">Manage Segment Types</a></li>
             <li><a href="/console/sub_segment_types/list">Manage Sub-Segment Types</a></li>

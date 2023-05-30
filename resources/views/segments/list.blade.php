@@ -1,5 +1,7 @@
 @extends ('layout.console')
 
+<!-- these views arent in use, see segment_forms -->
+
 @section ('content')
 
 <section class="w3-padding form-container">

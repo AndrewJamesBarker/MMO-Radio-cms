@@ -1,7 +1,6 @@
-@extends ('layout.console')
+@extends('layout.console')
 
-@section ('content')
-
+@section('content')
 
 <section class="w3-padding form-container">
 
@@ -11,8 +10,8 @@
 
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="field_name">Field Name:</label>
+        <div class="form-group">
+            <label for="field_name" class="form-labels">Field Name:</label>
             <input type="text" name="field_name" id="field_name" value="{{old('field_name')}}" required>
             
             @if ($errors->first('field_name'))
@@ -21,8 +20,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="field_label">Field Label:</label>
+        <div class="form-group">
+            <label for="field_label" class="form-labels">Field Label:</label>
             <input type="text" name="field_label" id="field_label" value="{{old('field_label')}}" required>
             
             @if ($errors->first('field_label'))
@@ -31,8 +30,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="field_data_type">Field Data Type:</label>
+        <div class="form-group">
+            <label for="field_data_type" class="form-labels">Field Data Type:</label>
             <input type="text" name="field_data_type" id="field_data_type" value="{{old('field_data_type')}}" required>
             
             @if ($errors->first('field_data_type'))
@@ -41,14 +40,14 @@
             @endif
         </div>
     
-        <div class="w3-margin-bottom">
-            <label for="segment_type_id">Segment Type:</label>
+        <div class="form-group">
+            <label for="segment_type_id" class="form-labels">Segment Type:</label>
             <select name="segment_type_id" id="segment_type_id">
                 <option></option>
-                @foreach ($segment_type_id as $segment_type_id)
-                    <option value="{{$segment_type_id->id}}"
-                        {{$segment_type_id->id == old('segment_type_id') ? 'selected' : ''}}>
-                        {{$segment_type_id->type_name}}
+                @foreach ($segment_type_id as $segment_type)
+                    <option value="{{$segment_type->id}}"
+                        {{$segment_type->id == old('segment_type_id') ? 'selected' : ''}}>
+                        {{$segment_type->type_name}}
                     </option>
                 @endforeach
             </select>
@@ -62,7 +61,7 @@
 
     </form>
 
-    <a href="/console/segment_fields/list">Back to Segment Field List</a>
+    <a href="/console/segment_fields/list" class="w3-button orange-background">Back to Segment Fields</a>
 
 </section>
 

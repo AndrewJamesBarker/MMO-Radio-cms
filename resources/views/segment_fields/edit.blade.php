@@ -8,8 +8,8 @@
     <form method="post" action="/console/segment_fields/edit/{{$segment_field->id}}" novalidate class="w3-margin-bottom">
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="field_name">Field Name:</label>
+        <div class="form-group">
+            <label for="field_name" class="form-labels">Field Name:</label>
             <input type="text" name="field_name" id="field_name" value="{{old('field_name', $segment_field->field_name)}}" required>
             @if ($errors->first('field_name'))
                 <br>
@@ -17,8 +17,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="field_label">Field Label:</label>
+        <div class="form-group">
+            <label for="field_label" class="form-labels">Field Label:</label>
             <input type="text" name="field_label" id="field_label" value="{{old('field_label', $segment_field->field_label)}}" required>
             @if ($errors->first('field_label'))
                 <br>
@@ -26,8 +26,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="field_data_type">Field Data Type:</label>
+        <div class="form-group">
+            <label for="field_data_type" class="form-labels">Field Data Type:</label>
             <input type="text" name="field_data_type" id="field_data_type" value="{{old('field_data_type', $segment_field->field_data_type)}}" required>
             @if ($errors->first('field_data_type'))
                 <br>
@@ -35,8 +35,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="segment_type_id">Segment Type:</label>
+        <div class="form-group">
+            <label for="segment_type_id" class="form-labels">Segment Type:</label>
             <select name="segment_type_id" id="segment_type_id">
                 <option></option>
                 @foreach($segment_type as $segmentType)
@@ -55,7 +55,7 @@
         <button type="submit" class="w3-button w3-green">Edit Segment Field</button>
     </form>
 
-    <a href="/console/segment_fields/list">Back to Segment Fields List</a>
+    <a href="/console/segment_fields/list" class="w3-button orange-background">Back to Segment Fields</a>
 </section>
 
 @endsection

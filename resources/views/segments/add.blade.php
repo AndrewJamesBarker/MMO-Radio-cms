@@ -2,7 +2,7 @@
 
 @section ('content')
 
-
+<!-- these views arent in use, see segment_forms -->
 
 <section class="w3-padding form-container">
 
@@ -24,7 +24,7 @@
 
         <div class="w3-margin-bottom">
             <label for="segment_data">Segment Data:</label>
-            <textarea name="segment_data" id="segment_data" required>{{old('segment_data')}}</textarea>
+            <textarea name="segment_data" id="segment_data" required>{{old('segment_data')}}  rows="5" cols="50"</textarea>
 
             @if ($errors->first('segment_data'))
                 <br>

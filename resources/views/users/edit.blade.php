@@ -1,6 +1,6 @@
-@extends ('layout.console')
+@extends('layout.console')
 
-@section ('content')
+@section('content')
 
 <section class="w3-padding form-container">
 
@@ -10,8 +10,8 @@
 
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="first">First Name:</label>
+        <div class="form-group">
+            <label for="first" class="form-labels">First Name:</label>
             <input type="text" name="first" id="first" value="{{old('first', $user->first)}}" required>
             
             @if ($errors->first('first'))
@@ -20,8 +20,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="last">Last Name:</label>
+        <div class="form-group">
+            <label for="last" class="form-labels">Last Name:</label>
             <input type="text" name="last" id="last" value="{{old('last', $user->last)}}" required>
             
             @if ($errors->first('last'))
@@ -30,8 +30,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="email">Email:</label>
+        <div class="form-group">
+            <label for="email" class="form-labels">Email:</label>
             <input type="email" name="email" id="email" value="{{old('email', $user->email)}}">
 
             @if ($errors->first('email'))
@@ -40,8 +40,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="password">Password:</label>
+        <div class="form-group">
+            <label for="password" class="form-labels">Password:</label>
             <input type="password" name="password" id="password">
 
             @if ($errors->first('password'))
@@ -50,9 +50,8 @@
             @endif
         </div>
 
-       
-        <div class="w3-margin-bottom">
-            <label for="role">Role:</label>
+        <div class="form-group">
+            <label for="role" class="form-labels">Role:</label>
             <select name="role" id="role" required>
                 <option value="">Select a role</option>
                 <option value="Reporter" {{ old('role') == 'Reporter' || $user->role == 'Reporter' ? 'selected' : '' }}>Reporter</option>
@@ -67,13 +66,11 @@
         </div>
 
 
-
-
         <button type="submit" class="w3-button w3-green">Edit User</button>
 
     </form>
 
-    <a href="/console/users/list">Back to User List</a>
+    <a href="/console/users/list" class="w3-button orange-background">Back to User List</a>
 
 </section>
 

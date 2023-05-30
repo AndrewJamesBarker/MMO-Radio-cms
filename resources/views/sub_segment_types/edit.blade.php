@@ -9,8 +9,8 @@
     <form method="post" action="/console/sub_segment_types/edit/{{$sub_segment_type->id}}" novalidate class="w3-margin-bottom">
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="sub_segment_name">Sub-Segment Name:</label>
+        <div class="form-group">
+            <label for="sub_segment_name" class="form-labels">Sub-Segment Name:</label>
             <input type="text" name="sub_segment_name" id="sub_segment_name" value="{{ old('sub_segment_name', $sub_segment_type->sub_segment_name) }}" required>
 
             @if ($errors->first('sub_segment_name'))
@@ -19,8 +19,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="segment_type_id">Segment Type:</label>
+        <div class="form-group">
+            <label for="segment_type_id" class="form-labels">Segment Type:</label>
             <select name="segment_type_id" id="segment_type_id">
                 <option></option>
                 @foreach ($segment_type_id as $segment)
@@ -39,7 +39,7 @@
         <button type="submit" class="w3-button w3-green">Edit Sub-Segment Type</button>
     </form>
 
-    <a href="/console/types/list">Back to Sub-Segment Type List</a>
+    <a href="/console/sub_segment_types/list" class="w3-button orange-background">Back to Sub-Segment Types</a>
 
 </section>
 

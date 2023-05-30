@@ -24,26 +24,30 @@ using field_name as segment_data json keys -->
     @if (isset($segmentFields))
     <form method="post" action="{{ route('segment_forms.edit', ['segment' => $segment->id]) }}" novalidate>
         @csrf
-
+        <div class="form-row">
         @foreach ($segmentFields as $segmentField)
+
             @if ($segmentField->segment_type_id == $segment_type_id)
-                <br>
-                <label>{{ $segmentField->field_label }}</label>
+            <div class="form-group">
+                <label class="form-labels">{{ $segmentField->field_label }}</label>
                 @if (preg_match('/^title$/i', $segmentField->field_name))
                     @php
                         $fieldName = 'custom_title'; // Use a custom name for the input field
                         $fieldValue = old($fieldName, $segment->title);
                     @endphp
                     <input type="text" name="{{ $fieldName }}" value="{{ $fieldValue }}">
+            </div>
                 @else
+                <div class="form-group">
                     @php
                         $fieldName = "segment_data[{$segmentField->field_name}]";
                         $fieldValue = old($fieldName, isset($segment->segment_data) ? json_decode($segment->segment_data)->{$segmentField->field_name} ?? '' : '');
                     @endphp
                     @if ($segmentField->field_data_type === 'text')
+                    
                         <input type="text" name="{{ $fieldName }}" value="{{ $fieldValue }}">
                     @elseif ($segmentField->field_data_type === 'textarea')
-                        <textarea name="{{ $fieldName }}">{{ $fieldValue }}</textarea>
+                        <textarea name="{{ $fieldName }}"  rows="5" cols="50">{{ $fieldValue }}</textarea>
                     @elseif ($segmentField->field_data_type === 'checkbox')
                         <input type="checkbox" name="{{ $fieldName }}" value="1" {{ $fieldValue ? 'checked' : '' }}>
                     @elseif ($segmentField->field_data_type === 'radio')
@@ -58,18 +62,21 @@ using field_name as segment_data json keys -->
                                 <option value="{{ $option }}" {{ $selected }}>{{ $option }}</option>
                             @endforeach
                         </select>
+                </div>
                     @endif
                 @endif
             @endif
+      
         @endforeach
+        </div>
 
     <!-- editing sub_segment_data in the segment_data json object -->
 
         @if ($subSegmentTypes->count() > 0)
-            <br>
-            <label>Select Sub-Segment Type</label>
+        <div class="form-group">
+            <label class="form-labels">Sub-Segment</label>
             <select name="sub_segment_type_id">
-                <option value="">Select Sub-Segment Type</option>
+                <option value="">----Sub-Segment----</option>
                 @foreach ($subSegmentTypes as $subSegmentType)
                     @php
                         $decodedSegmentData = json_decode($segment->segment_data, true);
@@ -80,6 +87,7 @@ using field_name as segment_data json keys -->
                     </option>
                 @endforeach
             </select>
+        </div>
         @endif
 
 <!-- hidden fields default to user role reporter(done in controller), internal_system value 1 is reporters, 
@@ -89,7 +97,6 @@ and segment_type of whichever user selected type (report/joke/game/etc) -->
 
             <input type="hidden" name="internal_system_id" value="1">
 
-            <br>
             <button type="submit" class="w3-button w3-green">Update Segment Form</button>
         </form>
     @endif
@@ -104,6 +111,6 @@ and segment_type of whichever user selected type (report/joke/game/etc) -->
         </div>
     @endif
 
-    <a href="{{ route('segment_forms.list') }}">Back to Segment Form List</a>
+    <a href="{{ route('segment_forms.list') }}" class="w3-button orange-background">Back to Segments</a>
 </section>
 @endsection

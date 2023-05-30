@@ -1,9 +1,6 @@
-@extends ('layout.console')
+@extends('layout.console')
 
-@section ('content')
-
-
-
+@section('content')
 <section class="w3-padding form-container">
 
     <h2>Add Internal System</h2>
@@ -12,8 +9,8 @@
 
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="system_name">System Name:</label>
+        <div class="w3-margin-bottom form-group">
+            <label for="system_name" class="form-labels">System Name:</label>
             <input type="text" name="system_name" id="system_name" value="{{old('system_name')}}" required>
             
             @if ($errors->first('system_name'))
@@ -22,8 +19,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="request_api_url">API Request URL:</label>
+        <div class="w3-margin-bottom form-group">
+            <label for="request_api_url" class="form-labels">API Request URL:</label>
             <input type="url" name="request_api_url" id="request_api_url" value="{{old('request_api_url')}}">
 
             @if ($errors->first('request_api_url'))
@@ -36,7 +33,7 @@
 
     </form>
 
-    <a href="/console/internal_systems/list">Back to Internal System List</a>
+    <a href="/console/internal_systems/list" class="w3-button orange-background">Back to Internal Systems</a>
 
 </section>
 

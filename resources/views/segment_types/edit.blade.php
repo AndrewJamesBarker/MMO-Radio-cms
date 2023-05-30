@@ -1,6 +1,6 @@
-@extends ('layout.console')
+@extends('layout.console')
 
-@section ('content')
+@section('content')
 
 <section class="w3-padding form-container">
 
@@ -10,8 +10,8 @@
 
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="type_name">Type Name: </label>
+        <div class="form-group">
+            <label for="type_name" class="form-labels">Type Name:</label>
             <input type="text" name="type_name" id="type_name" value="{{old('type_name', $segment_type->type_name)}}" required>
             
             @if ($errors->first('type_name'))
@@ -24,7 +24,7 @@
 
     </form>
 
-    <a href="/console/types/list">Back to Segment Type List</a>
+    <a href="/console/types/list" class="w3-button orange-background">Back to Segment Type List</a>
 
 </section>
 

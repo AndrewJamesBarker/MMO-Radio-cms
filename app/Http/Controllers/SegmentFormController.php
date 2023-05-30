@@ -29,9 +29,11 @@ class SegmentFormController extends Controller
     {
         $segment_type_id = $request->query('segment_type_id');
         $segmentFields = SegmentField::all();
+        $segmentTypes = SegmentType::all();
         $subSegmentTypes = SubSegmentType::where('segment_type_id', $segment_type_id)->get();
-        
-        return view('segment_forms.add', compact('segment_type_id', 'segmentFields', 'subSegmentTypes'));
+        $user_id = Auth::user()->id;
+        $user_role = Auth::user()->role;
+        return view('segment_forms.add', compact('segment_type_id', 'segmentFields', 'subSegmentTypes', 'user_id', 'user_role', 'segmentTypes'));
     }
     
 
@@ -39,7 +41,7 @@ class SegmentFormController extends Controller
     {
         // Obtain the user ID
         $user_id = Auth::user()->id;
-    
+        $user_role = Auth::user()->role;
         $segment_type_id = $request->query('segment_type_id');
     
         // Merge the user_id with the form data
@@ -91,8 +93,10 @@ class SegmentFormController extends Controller
         $segment_type_id = $segment->segment_type_id;
         $segmentFields = SegmentField::all();
         $subSegmentTypes = SubSegmentType::where('segment_type_id', $segment_type_id)->get();
+        $user_id = Auth::user()->id;
+        $user_role = Auth::user()->role;
     
-        return view('segment_forms.edit', compact('segment', 'segment_type_id', 'segmentFields', 'subSegmentTypes'));
+        return view('segment_forms.edit', compact('segment', 'segment_type_id', 'segmentFields', 'subSegmentTypes', 'user_id'));
     }
     public function edit(Request $request, $segmentId)
     {

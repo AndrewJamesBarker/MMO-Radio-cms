@@ -38,6 +38,29 @@ body {
   margin-right: auto;
 }
 
+.form-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  flex-basis: 50%; 
+  margin-right: 10px; 
+}
+
+.form-labels {
+  display: block;
+  margin: 5px 0;
+}
+
+input, textarea {
+  white-space: pre-line;
+  text-indent: .1rem;
+  padding: .2rem;
+  
+}
 /* w3 manipulation */
 
 
