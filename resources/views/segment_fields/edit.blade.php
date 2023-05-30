@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="w3-padding">
+<section class="w3-padding form-container">
     <h2>Edit Segment Field</h2>
 
     <form method="post" action="/console/segment_fields/edit/{{$segment_field->id}}" novalidate class="w3-margin-bottom">

@@ -1,7 +1,7 @@
 @extends('layout.console')
 
 @section('content')
-<section class="w3-padding">
+<section class="w3-padding form-container">
     <h2>Segment Type</h2>
 
     <a href="{{ route('segment_forms.add', ['segment_type_id' => 1]) }}">Report</a>
@@ -12,11 +12,26 @@
     <br>
     <br>
 
+
+
     @if (isset($segmentFields))
+        @php
+            $typeName = '';
+
+            if ($segment_type_id == 1) {
+                $typeName = 'Add Report';
+            } elseif ($segment_type_id == 2) {
+                $typeName = 'Add Joke';
+            } elseif ($segment_type_id == 3) {
+                $typeName = 'Add Game';
+            }
+        @endphp
+        <h3 class="med-titles">{{ $typeName }}</h3>
         <form method="post" action="{{ route('segment_forms.store') }}" novalidate>
             @csrf
-
+            
             @foreach ($segmentFields as $segmentField)
+            
                 @if ($segmentField->segment_type_id == $segment_type_id)
                     <br>     
                     @if (preg_match('/^title$/i', $segmentField->field_name))

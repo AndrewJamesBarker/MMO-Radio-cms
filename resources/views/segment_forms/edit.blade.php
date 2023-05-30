@@ -1,8 +1,21 @@
 @extends('layout.console')
 
 @section('content')
-<section class="w3-padding">
-    <h2>Edit Segment</h2>
+<section class="w3-padding form-container">
+
+        @php
+            $typeName = '';
+
+            if ($segment_type_id == 1) {
+                $typeName = 'Report';
+            } elseif ($segment_type_id == 2) {
+                $typeName = 'Joke';
+            } elseif ($segment_type_id == 3) {
+                $typeName = 'Game';
+            }
+        @endphp
+        
+    <h2>Edit {{$typeName}}</h2>
 
 
 <!-- retrieving, decoding from json, separating title from segment_data and inserting into columns  

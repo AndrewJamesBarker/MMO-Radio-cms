@@ -3,7 +3,7 @@
 @section ('content')
 
 
-<section class="w3-padding">
+<section class="w3-padding form-container">
 
     <h2>Add Segment Field</h2>
 

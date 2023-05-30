@@ -2,8 +2,8 @@
 
 @section ('content')
 
-<section class="w3-padding">
-  
+<section class="w3-padding form-container">
+
     <h2 class="med-titles">Manage Segments</h2>
 
 
