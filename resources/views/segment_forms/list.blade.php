@@ -2,9 +2,11 @@
 
 @section ('content')
 
-<section class="w3-padding form-container">
+<section class="w3-padding form-container glass-effect">
 
-    <h2 class="med-titles">Manage Segments</h2>
+        <div class="titles-background">
+            <h2 class="med-titles">Manage Segments</h2>
+        </div>
 
 
     <table class="w3-table w3-margin-bottom">
@@ -33,9 +35,9 @@
                 <td>{{$segment->segmenttype->type_name}}</td>
                 <td>{{$segment->internalsystem->system_name}}</td>
                 <td>{{$segment->created_at->format('M j, Y')}}</td>
-                <td><a href="/console/segment_forms/image/{{$segment->id}}">Image</a></td>
-                <td><a href="/console/segment_forms/edit/{{$segment->id}}">Edit</a></td>
-                <td><a href="/console/segment_forms/delete/{{$segment->id}}">Delete</a></td>
+                <td><a class="w3-button-no-marg w3-green"  href="/console/segment_forms/image/{{$segment->id}}">Image</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/segment_forms/edit/{{$segment->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background"  href="/console/segmentforms/delete/{{$segment->id}}">Delete</a></td>
             </tr>
         @endforeach
     </table>

@@ -4,7 +4,7 @@
 
 @section ('content')
 
-<section class="w3-padding form-container">
+<section class="w3-padding form-container glass-effect">
 
     <h2 class="med-titles">Manage Segments</h2>
 
@@ -34,10 +34,11 @@
                 <td>{{$segment->segmenttype->type_name}}</td>
                 <td>{{$segment->internalsystem->system_name}}</td>
                 <td>{{$segment->created_at->format('M j, Y')}}</td>
-                <td><a href="/console/segments/image/{{$segment->id}}">Image</a></td>
-                <td><a href="/console/segments/edit/{{$segment->id}}">Edit</a></td>
-                <td><a href="/console/segments/delete/{{$segment->id}}">Delete</a></td>
-            </tr>
+                <td><a class="w3-button-no-marg w3-green"  href="/console/segments/image/{{$segment->id}}">Image</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/segments/edit/{{$segment->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background"  href="/console/segments/delete/{{$segment->id}}">Delete</a></td>
+               
+               
         @endforeach
        
     </table>

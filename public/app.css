@@ -3,11 +3,16 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.1rem;
-    background: linear-gradient(45deg, #ffffff, #f2f2f2);
-    /* color: white;
-    background-color: black; */
+    /* background: linear-gradient(45deg, #ffffff, #f2f2f2); */
+    color: white;
+    background-color: black;
 }
 
+
+.frontend-segment-data {
+  color: black;
+  padding: .3rem;
+}
 /* Header */
 
 .header {
@@ -36,10 +41,11 @@ body {
 }
 
 .form-container {
-  max-width: 95%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1.3rem;
+  margin: 1.3rem;
+  padding: 2rem;
 }
 
 .form-row {
@@ -93,14 +99,34 @@ ul li::before {
   color: #eb741d;
 }
 
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* .titles-background {
+  background-color: ;
+} */
+
 /* w3 manipulation */
 
 
+.w3-table {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+}
+
 .w3-padding {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
 }
 
 
@@ -118,6 +144,7 @@ ul li::before {
   transition: 0.3s;
   border-radius: 8px;
   background-color: #fff;
+  opacity: .9;
   padding: 8px;
 }
 
@@ -132,6 +159,17 @@ ul li::before {
   border-radius: 8px;
   display: inline-block;
   margin-top: .8em;
+}
+.w3-button-no-marg {
+  padding: 9px 17px;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  display: inline-block;
+
 }
 
 .w3-green {
@@ -159,6 +197,11 @@ ul li::before {
   background-color: #eb741d;
 }
 
+.red-background {
+  color: #fff;
+  background-color: #eb062c;
+}
+
 .black-background {
   color: #fff;
   background-color: black;
@@ -166,9 +209,11 @@ ul li::before {
 
 
 .table-top {
+    border: 1px solid #eb741d;
+    border-radius: 8px;
     padding: 4.5rem;
     margin: 0;
-    border: none;
+    /* border: none; */
     background-color: black;
     color: white;
 }
@@ -187,7 +232,7 @@ ul li::before {
 /* text */
 
 .big-titles {
-  text-align: center;
+  /* text-align: center; */
   font-weight: 600;
   letter-spacing: .8px;
   font-size: 2.5rem;
@@ -201,6 +246,10 @@ ul li::before {
     text-align: center;
     font-weight: 400;
     padding: 1rem;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
 }
 
 .red-text {

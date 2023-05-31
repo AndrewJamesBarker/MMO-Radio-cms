@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<section class="w3-padding form-container">
+<section class="w3-padding form-container glass-effect">
 
     <h2 class="med-titles">Manage Users</h2>
 
@@ -21,8 +21,8 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->role}}</td>
                 <td>{{$user->created_at->format('M j, Y')}}</td>
-                <td><a href="/console/users/edit/{{$user->id}}">Edit</a></td>
-                <td><a href="/console/users/delete/{{$user->id}}">Delete</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/users/edit/{{$user->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background" href="/console/users/delete/{{$user->id}}">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

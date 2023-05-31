@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<section class="w3-padding form-container">
+<section class="w3-padding form-container glass-effect">
 
     <h2 class="med-titles">Manage Segment Types</h2>
 
