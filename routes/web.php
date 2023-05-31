@@ -75,6 +75,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/console/reporter_reg', function () {
         return view('console.reporter_reg');
     });
+
     Route::post('/console/reporter/add', [ReporterRegController::class, 'add']);
 
   // Routes that should be restricted for "Reporter" role users
@@ -140,7 +141,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'editForm'])->where('internal_system', '[0-9]+')->middleware('auth');
     Route::post('/console/internal_systems/edit/{internal_system:id}', [InternalSystemsController::class, 'edit'])->where('internal_system', '[0-9]+')->middleware('auth');
     Route::get('/console/internal_systems/delete/{internal_system:id}', [InternalSystemsController::class, 'delete'])->where('internal_system', '[0-9]+')->middleware('auth');
-    Route::get('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
+    Route::get('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'imageForm'])->where('internal_system', '[0-9]+')->middleware('auth');
     Route::post('/console/internal_systems/image/{internal_system:id}', [InternalSystemsController::class, 'image'])->where('internal_system', '[0-9]+')->middleware('auth');
     
     });

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use App\Models\InternalSystem;
 
+
 class InternalSystemsController extends Controller
 {
 
@@ -25,7 +26,6 @@ class InternalSystemsController extends Controller
             'system_names' => InternalSystem::select('id', 'system_name')->get(),
         ]);
     }
-    
     
     
     public function add()

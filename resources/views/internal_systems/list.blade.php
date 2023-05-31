@@ -19,7 +19,7 @@
             <tr>
                 <td>
                     @if ($internal_system->system_icon)
-                        <img src="{{asset('storage/'.$internal_system->image)}}" width="200">
+                        <img src="{{asset('storage/'.$internal_system->system_icon)}}" width="200">
                     @endif
                 </td>
                 <td>{{$internal_system->system_name}}</td>
