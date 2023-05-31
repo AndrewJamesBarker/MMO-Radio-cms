@@ -24,7 +24,7 @@
 
     </form>
 
-    <a href="/console/types/list" class="w3-button orange-background">Back to Segment Type List</a>
+    <a href="/console/segment_types/list" class="w3-button orange-background">Back to Segment Types</a>
 
 </section>
 

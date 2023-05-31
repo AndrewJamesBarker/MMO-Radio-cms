@@ -7,9 +7,9 @@
     <!-- <h2 class="w3-text-blue med-titles">Welcome!</h2> -->
 
     <p class="para-container frontend-para">
-        As a reporter, you can do many things. You can create ideas for
+        <em><span class="red-text">As</span> a reporter, you can do many things. You can create ideas for
         news stories, or create segments like trivia, games, songs,
-        and advertisements! See below for some examples.
+        and advertisements! See below for some examples.</em>
     </p>
 
 </section>
@@ -18,7 +18,7 @@
 
 <section class="w3-padding">
 
-    <h2 class="med-titles">Segments Of The Past</h2>
+    <h2 class="med-titles orange-text"><span class="red-text">Segments</span> Of The Past</h2>
 
     @foreach ($segments as $segment)
         <div class="w3-card w3-margin">

@@ -1,6 +1,9 @@
+
+
 body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.1rem;
+    background: linear-gradient(45deg, #ffffff, #f2f2f2);
     /* color: white;
     background-color: black; */
 }
@@ -36,6 +39,7 @@ body {
   max-width: 95%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1.3rem;
 }
 
 .form-row {
@@ -55,12 +59,40 @@ body {
   margin: 5px 0;
 }
 
+
+
 input, textarea {
   white-space: pre-line;
   text-indent: .1rem;
   padding: .2rem;
   
 }
+
+.dashboard-list {
+  font-size: 1.3rem;
+  margin-left: 2rem;
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+.segment-choice {
+  font-size: 1.3rem;
+  margin-left: .4rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.dashboard-list a {
+  text-decoration: none;
+}
+
+ul li::before {
+  content: '\25C6 '; 
+  color: #eb741d;
+}
+
 /* w3 manipulation */
 
 

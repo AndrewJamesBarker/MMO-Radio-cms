@@ -21,7 +21,7 @@
 
 <header class="w3-padding header">
 
-    <h1 class="big-titles frontend-title"><span class="red-text">BRICK</span><span class="orange-text">MMO</span> <span class="med-weight">Reporter</span></h1>
+    <h1 class="big-titles frontend-title"><span class="red-text">BRICK</span><span class="orange-text">MMO</span> <span class="med-weight"><em>Reporter</em></span></h1>
 
     <div class="nav">
         <p class="user-name-display">

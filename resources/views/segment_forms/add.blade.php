@@ -5,14 +5,14 @@
 
     <h2>Segment Type</h2>
 
-    <a href="{{ route('segment_forms.add', ['segment_type_id' => 1]) }}">Report</a>
-    <br>
-    <a href="{{ route('segment_forms.add', ['segment_type_id' => 2]) }}">Joke</a>
-    <br>
-    <a href="{{ route('segment_forms.add', ['segment_type_id' => 3]) }}">Game</a>
-    <br>
-    <br>
-
+    <div class="segment-choice">
+        <a href="{{ route('segment_forms.add', ['segment_type_id' => 1]) }}">Report</a>
+        <br>
+        <a href="{{ route('segment_forms.add', ['segment_type_id' => 2]) }}">Joke</a>
+        <br>
+        <a href="{{ route('segment_forms.add', ['segment_type_id' => 3]) }}">Game</a>
+    </div>
+  
     @if (isset($segmentFields))
         @php
             $typeName = '';
