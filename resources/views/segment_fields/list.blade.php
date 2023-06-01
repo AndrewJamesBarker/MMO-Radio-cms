@@ -23,13 +23,13 @@
                 <td>{{$segment_field->field_label}}</td>  
                 <td>{{$segment_field->field_data_type}}</td>  
                 <td>{{$segment_field->segmenttype->type_name}}</td>
-                <td><a href="/console/segment_fields/edit/{{$segment_field->id}}">Edit</a></td>
-                <td><a href="/console/segment_fields/delete/{{$segment_field->id}}">Delete</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/segment_fields/edit/{{$segment_field->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background" href="/console/segment_fields/delete/{{$segment_field->id}}">Delete</a></td>
             </tr>
         @endforeach
     </table>
 
-    <a href="/console/segment_fields/add" class="w3-button w3-green">New Segment Fields</a>
+    <a href="/console/segment_fields/add" class="w3-padding form-container w3-button w3-green">New Segment Fields</a>
 
 </section>
 

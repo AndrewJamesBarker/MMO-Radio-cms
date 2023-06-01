@@ -17,13 +17,13 @@
             <tr>
                 <td>{{$segment_type->type_name}}</td>
                 <td>{{$segment_type->id}}</td>
-                <td><a href="/console/segment_types/edit/{{$segment_type->id}}">Edit</a></td>
-                <td><a href="/console/segment_types/delete/{{$segment_type->id}}">Delete</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/segment_types/edit/{{$segment_type->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background" href="/console/segment_types/delete/{{$segment_type->id}}">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
 
-    <a href="/console/segment_types/add" class="w3-button w3-green">New Segment Type</a>
+    <a href="/console/segment_types/add" class="w3-padding form-container w3-button w3-green">New Segment Type</a>
 
 </section>
 

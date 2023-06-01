@@ -24,14 +24,14 @@
                 </td>
                 <td>{{$internal_system->system_name}}</td>
                 <td>{{$internal_system->request_api_url}}</td>
-                <td><a href="/console/internal_systems/image/{{$internal_system->id}}">Image</a></td>
-                <td><a href="/console/internal_systems/edit/{{$internal_system->id}}">Edit</a></td>
-                <td><a href="/console/internal_systems/delete/{{$internal_system->id}}">Delete</a></td>
+                <td><a class="w3-button-no-marg w3-green" href="/console/internal_systems/image/{{$internal_system->id}}">Image</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/internal_systems/edit/{{$internal_system->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background" href="/console/internal_systems/delete/{{$internal_system->id}}">Delete</a></td>
             </tr>
         @endforeach
     </table>
 
-    <a href="/console/internal_systems/add" class="w3-button w3-green">New Internal System</a>
+    <a href="/console/internal_systems/add" class="w3-padding form-container w3-button w3-green">New Internal System</a>
 
 </section>
 

@@ -27,7 +27,7 @@
         <?php endforeach; ?>
     </table>
 
-    <a href="/console/users/add" class="w3-button w3-green">New User</a>
+    <a href="/console/users/add" class="w3-padding form-container w3-button w3-green">New User</a>
 
 </section>
 

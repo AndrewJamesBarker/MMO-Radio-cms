@@ -19,13 +19,13 @@
             <tr>       
                 <td>{{$sub_segment_type->sub_segment_name}}</td>  
                 <td>{{$sub_segment_type->segmenttype->type_name}}</td>
-                <td><a href="/console/sub_segment_types/edit/{{$sub_segment_type->id}}">Edit</a></td>
-                <td><a href="/console/sub_segment_types/delete/{{$sub_segment_type->id}}">Delete</a></td>
+                <td><a class="w3-button-no-marg orange-background" href="/console/sub_segment_types/edit/{{$sub_segment_type->id}}">Edit</a></td>
+                <td><a class="w3-button-no-marg red-background" href="/console/sub_segment_types/delete/{{$sub_segment_type->id}}">Delete</a></td>
             </tr>
         @endforeach
     </table>
 
-    <a href="/console/sub_segment_types/add" class="w3-button w3-green">New Sub-Segment Type</a>
+    <a href="/console/sub_segment_types/add" class="w3-padding form-container w3-button w3-green">New Sub-Segment Type</a>
 
 </section>
 

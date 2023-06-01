@@ -7,9 +7,9 @@
     <!-- <h2 class="w3-text-blue med-titles">Welcome!</h2> -->
 
     <p class="para-container frontend-para">
-        <em><span class="w3-text-blue">As</span> a reporter, you can do many things. You can create ideas for
+        As a reporter, you can do many things. You can create ideas for
         news stories, or create segments like trivia, games, songs,
-        and advertisements! See below for some examples.</em>
+        and advertisements!
     </p>
 
 </section>
@@ -21,7 +21,7 @@
     <h2 class="med-titles orange-text"><span class="red-text">Segments</span> Of The Past</h2>
 
     @foreach ($segments as $segment)
-        <div class="w3-card w3-margin glass-effect">
+        <div class="w3-card w3-margin">
             <div class="w3-container black-background">
                 <h3>{{$segment->title}}</h3>
             </div>
@@ -32,7 +32,7 @@
             </div>
             
             @if ($segment->image)
-                <div class="w3-container w3-margin-top w3-padding">
+                <div class="image-container w3-margin-top w3-padding">
                     <img src="{{asset('storage/'.$segment->image)}}" width="100">
                 </div>
             @endif

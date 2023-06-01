@@ -42,7 +42,7 @@
         @endforeach
     </table>
     
-    <a href="/console/segment_forms/add" class="w3-button w3-green">New Segment</a>
+    <a href="/console/segment_forms/add" class="w3-padding form-container w3-button w3-green">New Segment</a>
 
     <div class="pagination-container">
         {{$segments->links()}}

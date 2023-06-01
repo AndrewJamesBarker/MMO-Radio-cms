@@ -47,7 +47,7 @@
         {{$segments->links()}}
     </div>
 
-    <a href="/console/segments/add" class="w3-button w3-green">New Segment</a>
+    <a href="/console/segments/add" class="w3-padding form-container w3-button w3-green">New Segment</a>
 
 </section>
 

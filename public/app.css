@@ -10,8 +10,15 @@ body {
 
 
 .frontend-segment-data {
-  color: black;
+  color: #fff;
   padding: .3rem;
+  padding-left: 1rem;
+}
+
+.image-container {
+  background: #fff8f3;
+  opacity: .8;
+  border-radius: 8px;
 }
 /* Header */
 
@@ -140,14 +147,20 @@ ul li::before {
 }
 
 .w3-card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  /* box-shadow: 0 4px 8px 0 #eb741d; */
+  /* transition: 0.3s; */
+  border: 1px solid #eb741d;
   border-radius: 8px;
-  background-color: #fff;
+  
+  /* background-color: #eb741d; */
   opacity: .9;
   padding: 8px;
 }
 
+
+.add-button {
+  margin-left: 2rem;
+}
 
 .w3-button {
   padding: 9px 17px;
@@ -160,6 +173,7 @@ ul li::before {
   display: inline-block;
   margin-top: .8em;
 }
+
 .w3-button-no-marg {
   padding: 9px 17px;
   font-size: 1.1em;
@@ -211,12 +225,12 @@ ul li::before {
 .table-top {
     border: 1px solid #eb741d;
     border-radius: 8px;
-    padding: 4.5rem;
-    margin: 0;
     /* border: none; */
     background-color: black;
     color: white;
 }
+
+
 
 .user-name-display {
   font-size: 1.2rem;
