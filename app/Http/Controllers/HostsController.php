@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Host;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+
 
 class HostsController extends Controller
 {
     public function list()
     {
-      
         return view('hosts.list', [
-            'hosts' => $hosts
+            'hosts' => Host::all()
         ]);
     }
     
@@ -40,7 +42,7 @@ class HostsController extends Controller
         $host->save();
 
         return redirect('/console/hosts/list')
-            ->with('message', 'host has been added!');
+            ->with('message', 'Host has been added!');
     }
 
 
@@ -53,7 +55,7 @@ class HostsController extends Controller
     }
 
 
-    public function edit(Segment $segment)
+    public function edit(Host $host)
     {
 
         $attributes = request()->validate([
@@ -64,11 +66,12 @@ class HostsController extends Controller
         ]);
 
     
-        $host = new Host();
         $host->name = $attributes['name'];
         $host->gtts_name = $attributes['gtts_name'];
         $host->personality = $attributes['personality'];
         $host->bio = $attributes['bio'];
+
+        $host->save();
 
         return redirect('/console/hosts/list')
             ->with('message', 'Host has been edited!');
@@ -97,22 +100,26 @@ class HostsController extends Controller
 
     public function image(Host $host)
     {
-
         $attributes = request()->validate([
-            'image' => 'required|image',
+            'profile_pic' => 'required|image',
         ]);
-
-        if($host->image)
-        {
+    
+        if ($host->image) {
             Storage::delete($host->image);
         }
-        
-        $path = request()->file('image')->store('hosts');
-
-        $host->image = $path;
+    
+        $path = request()->file('profile_pic')->store('hosts');
+    
+        $host->profile_pic = $path;
+    
+        // dd($host); // Check the host instance before saving
+    
         $host->save();
-        
+    
         return redirect('/console/hosts/list')
             ->with('message', 'Host image has been edited!');
     }
+    
+    
+    
 }

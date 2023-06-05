@@ -13,6 +13,7 @@ use App\Http\Controllers\SegmentFieldsController;
 use App\Http\Controllers\SubSegmentTypesController;
 use App\Http\Controllers\SegmentsController;
 use App\Http\Controllers\SegmentFormController;
+use App\Http\Controllers\HostsController;
 use Illuminate\Support\Facades\Route;
 
 

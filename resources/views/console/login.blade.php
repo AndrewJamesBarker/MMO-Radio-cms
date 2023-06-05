@@ -2,14 +2,14 @@
 
 @section ('content')
 
-<section class="w3-padding">
+<section class="w3-padding form-container">
 
     <form method="post" action="/console/login" novalidate>
 
         @csrf
 
-        <div class="w3-margin-bottom">
-            <label for="email">Email Address:</label>
+        <div class="w3-margin-bottom form-group">
+            <label for="email" class="form-labels">Email Address:</label>
             <input type="email" name="email" id="email" value="{{old('email')}}" required>
             
             @if ($errors->first('email'))
@@ -18,8 +18,8 @@
             @endif
         </div>
 
-        <div class="w3-margin-bottom">
-            <label for="password">Password:</label>
+        <div class="w3-margin-bottom form-group">
+            <label for="password" class="form-labels">Password:</label>
             <input type="password" name="password" id="password" required>
 
             @if ($errors->first('password'))
