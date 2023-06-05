@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Type;
+use App\Models\Segment;
+use App\Models\Host;
 use App\Models\User;
 use App\Models\Project;
 
@@ -26,6 +28,21 @@ Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
     return $types;
+
+});
+
+Route::get('/hosts', function(){
+
+    $hosts = Host::orderBy('name')->get();
+    return $hosts;
+
+});
+
+
+Route::get('/segments', function(){
+
+    $segments = Segment::orderBy('created_at')->get();
+    return $segments;
 
 });
 
