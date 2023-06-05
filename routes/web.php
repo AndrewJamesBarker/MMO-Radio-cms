@@ -90,6 +90,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/console/segments/delete/{segment:id}', [SegmentsController::class, 'delete'])->where('segment', '[0-9]+')->middleware('auth');
     Route::get('/console/segments/image/{segment:id}', [SegmentsController::class, 'imageForm'])->where('segment', '[0-9]+')->middleware('auth');
     Route::post('/console/segments/image/{segment:id}', [SegmentsController::class, 'image'])->where('segment', '[0-9]+')->middleware('auth');
+
+    Route::get('/console/hosts/list', [HostsController::class, 'list'])->middleware('auth'); 
+    Route::get('/console/hosts/add', [HostsController::class, 'addForm'])->middleware('auth');
+    Route::post('/console/hosts/add', [HostsController::class, 'add'])->middleware('auth');
+    Route::get('/console/hosts/edit/{host:id}', [HostsController::class, 'editForm'])->where('host', '[0-9]+')->middleware('auth');
+    Route::post('/console/hosts/edit/{host:id}', [HostsController::class, 'edit'])->where('host', '[0-9]+')->middleware('auth');
+    Route::get('/console/hosts/delete/{host:id}', [HostsController::class, 'delete'])->where('host', '[0-9]+')->middleware('auth');
+    Route::get('/console/hosts/image/{host:id}', [HostsController::class, 'imageForm'])->where('host', '[0-9]+')->middleware('auth');
+    Route::post('/console/hosts/image/{host:id}', [HostsController::class, 'image'])->where('host', '[0-9]+')->middleware('auth');
         
     Route::get('/console/projects/list', [ProjectsController::class, 'list'])->middleware('auth');
     Route::get('/console/projects/add', [ProjectsController::class, 'addForm'])->middleware('auth');
