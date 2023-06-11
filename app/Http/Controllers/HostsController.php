@@ -118,8 +118,5 @@ class HostsController extends Controller
     
         return redirect('/console/hosts/list')
             ->with('message', 'Host image has been edited!');
-    }
-    
-    
-    
+    }  
 }
