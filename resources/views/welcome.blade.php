@@ -23,17 +23,17 @@
     @foreach ($segments as $segment)
         <div class="w3-card w3-margin">
             <div class="w3-container black-background">
-                <h3>{{$segment->title}}</h3>
+                <h3 class="orange-text">{{$segment->title}}</h3>
             </div>
             <div class="frontend-segment-data">
-                <p>{{ data_get(json_decode($segment->segment_data), 'sub_segment_name') }}</p>
+                <p class="red-text">{{ data_get(json_decode($segment->segment_data), 'sub_segment_name') }}</p>
                 <p>{{ data_get(json_decode($segment->segment_data), 'content') }}</p>
                 <p>{{ data_get(json_decode($segment->segment_data), 'joke') }}</p>
             </div>
             
             @if ($segment->image)
-                <div class="image-container w3-margin-top w3-padding">
-                    <img src="{{asset('storage/'.$segment->image)}}" width="100">
+                <div class=" w3-margin-top w3-padding">
+                    <img  src="{{asset('storage/'.$segment->image)}}" width="100" alt="image reflecting the segment title">
                 </div>
             @endif
         </div>

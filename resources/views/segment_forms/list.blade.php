@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<section class="w3-padding form-container glass-effect">
+<section class="table-container w3-padding glass-effect">
 
         <div class="titles-background">
             <h2 class="med-titles">Manage Segments</h2>
@@ -23,7 +23,7 @@
             <th></th>
         </tr>
         @foreach ($segments as $segment)
-            <tr>
+            <tr class="row-spacing">
                 <td>
                     @if ($segment->image)
                         <img src="{{asset('storage/'.$segment->image)}}" width="200">
