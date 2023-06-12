@@ -15,6 +15,11 @@ use App\Models\Segment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage; 
 
+/* This is the real meat for editing segments 
+* forms are dynamically rendered based on criteria from form fields table 
+* some fields are saved as json to be stored in segment_data for producer to easily
+parse for openai prompts */
+
 class SegmentFormController extends Controller
 {
     public function list()

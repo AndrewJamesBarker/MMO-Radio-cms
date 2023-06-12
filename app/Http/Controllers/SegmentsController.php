@@ -14,6 +14,10 @@ use App\Models\InternalSystem;
 use App\Models\Segment;
 
 
+/* see segmentForm controller for most functionality regarding the dynamic form rendering
+this is/was more for admin originally, offering ability to edit internal_system, subsegment_id, and user_id
+which doesnt really have much usecase */
+
 class SegmentsController extends Controller
 {
     public function list()
