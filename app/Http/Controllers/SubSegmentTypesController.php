@@ -70,7 +70,7 @@ class SubSegmentTypesController extends Controller
         
         $subSegmentType->delete();
         
-        return redirect('/console/sub_segment_type/list')
+        return redirect('/console/sub_segment_types/list')
             ->with('message', 'Sub-Segment Type has been deleted!');        
     }
 
