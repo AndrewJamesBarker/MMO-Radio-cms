@@ -1,6 +1,5 @@
 BRICKMMO Radio Reporter cms
 
-
 A CMS for managing the Reporter side of the Brick MMO Radio Application.
 
 Admin can perform crud on all tables. 
@@ -24,3 +23,5 @@ If you have an account created from within the system, you can assign whichever 
 
 * 'Segment Forms' views and logic are for Reporters, and use dynamic and conditional rendering to create different forms depending on what type of segment is being made (Report/Game/Joke/etc), and then provides dropdown selection for sub_types 
 (local news, entertainment, Knock Knock Joke, etc).
+
+
