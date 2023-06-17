@@ -243,6 +243,13 @@ ul li::before {
   margin-bottom: 3rem;
 }
 
+.host-personality .content {
+  width: 150px; /* Adjust the width as desired */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 
 .user-name-display {

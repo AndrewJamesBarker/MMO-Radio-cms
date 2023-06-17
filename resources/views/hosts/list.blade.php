@@ -26,7 +26,12 @@
                 </td>
                 <td>{{$host->name}}</td>
                 <td>{{$host->gtts_name}}</td>
-                <td>{{$host->personality}}</td>
+                <td class="host-personality">
+                    <div class="content">
+                        {{$host->personality}}
+                    </div>
+                </td>
+
                 <td>{{$host->bio}}</td>
                 <td><a class="w3-button-no-marg w3-green" href="/console/hosts/image/{{$host->id}}">Image</a></td>
                 <td><a class="w3-button-no-marg orange-background" href="/console/hosts/edit/{{$host->id}}">Edit</a></td>
