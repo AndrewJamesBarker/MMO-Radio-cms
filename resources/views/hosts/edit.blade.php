@@ -24,7 +24,7 @@
             <label for="gtts_name" class="form-labels">GTTS Name:</label>
             <input type="url" name="gtts_name" id="gtts_name" value="{{old('gtts_name', $host->gtts_name)}}">
             <br>
-            <a href="https://cloud.google.com/text-to-speech/docs/voices" target="blank">Click For List Of Voice Types</a>
+            <a href="https://cloud.google.com/text-to-speech/docs/voices" target="blank" alt="link to voices list">Click For List Of Voices.</a>
             @if ($errors->first('gtts_name'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('gtts_name')}}</span>
