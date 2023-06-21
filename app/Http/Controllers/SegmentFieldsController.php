@@ -11,7 +11,7 @@ class SegmentFieldsController extends Controller
     public function list()
     {
         return view('segment_fields.list', [
-            'segment_fields' => SegmentField::all()
+            'segment_fields' => SegmentField::all(),
         ]);
      
     }

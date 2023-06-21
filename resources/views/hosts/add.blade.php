@@ -22,6 +22,8 @@
         <div class="w3-margin-bottom form-group">
             <label for="gtts_name" class="form-labels">GTTS Name:</label>
             <input type="text" name="gtts_name" id="gtts_name" value="{{old('gtts_name')}}">
+            <br>
+            <a href="https://cloud.google.com/text-to-speech/docs/voices" target="blank">Click For List Of Voice Types</a>
 
             @if ($errors->first('gtts_name'))
                 <br>
