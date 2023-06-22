@@ -12,6 +12,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{url('app.css')}}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
         <script src="{{url('app.js')}}"></script>
 
     <script src="{{url('app.js')}}"></script>

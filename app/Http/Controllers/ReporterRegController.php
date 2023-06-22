@@ -15,9 +15,10 @@ class ReporterRegController extends Controller
         'first' => 'required',
         'last' => 'required',
         'role' => 'required',
-        'email' => 'required|email|unique:users',
+        'email' => ['required', 'email', 'unique:users', 'regex:/^[a-zA-Z0-9._%+-]+@humbermail\.ca$/'],
         'password' => 'required',
     ]);
+    
 
     $user = new User();
     $user->first = $request->input('first');

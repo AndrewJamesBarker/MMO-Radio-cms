@@ -29,7 +29,10 @@
 
         <div class="w3-margin-bottom">
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" value="{{ old('email') }}" required pattern="[a-zA-Z0-9._%+-]+@humbermail.ca$" title="Only valid Humber email addresses are allowed">
+           
+            <input type="email" name="email" id="email" value="{{ old('email') }}" required pattern="/^[a-zA-Z0-9._%+-]+@humbermail\.ca$/" title="Only valid Humber email addresses are allowed">
+            <br>
+            <p class="w3-text-red">Reporters must register with a valid humbermail.ca email account</p>
             @error('email')
                 <br>
                 <span class="w3-text-red">{{ $message }}</span>
