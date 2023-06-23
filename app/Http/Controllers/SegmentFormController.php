@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Storage;
 * some fields are saved as json to be stored in segment_data for producer to easily
 parse for openai prompts */
 
+// <!-- These forms are dynamically rendered by the contents of the 'segment_fields' table, as defined by their
+// segment_type_id -->
+
 class SegmentFormController extends Controller
 {
     public function list()

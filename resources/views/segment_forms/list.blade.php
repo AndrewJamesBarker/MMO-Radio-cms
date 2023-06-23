@@ -1,5 +1,8 @@
 @extends ('layout.console')
 
+<!-- These forms are dynamically rendered by the contents of the 'segment_fields' table, as defined by their
+segment_type_id -->
+
 @section ('content')
 
 <section class="table-container w3-padding glass-effect">

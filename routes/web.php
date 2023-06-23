@@ -29,6 +29,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/* Routes restrict users who are signed in with a user id of 'reporter' to only access
+crud on segments (the dynamically rendered forms) people with admin role can see and edit
+all the tables. 
+ps people who register via the reporter portal are forced to register with a humbermail.ca account
+and are auto assigned the restricted 'reporter' role */
+
 //welcome page segment results
 
 Route::get('/', function () {
